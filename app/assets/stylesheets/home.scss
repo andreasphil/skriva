@@ -1,3 +1,70 @@
+// -----------------------------------------------------------------------------
 // Place all the styles related to the home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// -----------------------------------------------------------------------------
+
+.home-content
+{
+  text-align: center;
+  margin: auto;
+  max-width: 30.0rem;
+  padding: 4.0rem 0;
+  width: 100%;
+}
+
+
+// -----------------------------------------------------------------------------
+// Page elements
+// -----------------------------------------------------------------------------
+
+.home-title
+{
+  margin: 1.0rem 0;
+
+  &:after
+  {
+    animation: blink 0.75s linear infinite alternate;
+    border-right: 0.15rem $primary-color solid;
+    content: '';
+    height: 2.5rem;
+    right: 0.5rem;
+  }
+}
+
+.home-description
+{
+  margin: 1.0rem 0;
+}
+
+.home-actions
+{
+  margin: 2.0rem 0;
+
+  .btn + .btn
+  {
+    margin-left: $unit-4;
+  }
+}
+
+.home-copyright
+{
+  @extend .text-gray;
+  font-size: $font-size-sm;
+  margin-top: 4.0rem;
+
+  a
+  {
+    @extend .text-gray;
+    text-decoration: underline;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Animations
+// -----------------------------------------------------------------------------
+
+@keyframes blink
+{
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}

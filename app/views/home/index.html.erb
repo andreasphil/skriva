@@ -1,2 +1,16 @@
-<h1>Skriva</h1>
-<h2>Super-simple notetaking.</h2>
+<div class="home-content">
+  <h1 class="home-title">Super-Simple Note Taking.</h1>
+  <p class="home-description">
+    <%= link_to 'Skriva', 'https://ensv.dict.cc/?s=skriva', target: '_blank' %> gives you a single space to jot down your thoughts and access them through every browser. No files and folders—just a text file that syncs.
+  </p>
+
+  <div class="home-actions">
+    <%= link_to 'Create account', sign_up_path, class: ['btn', 'btn-primary', 'btn-lg'] %>
+    <%= link_to t('.sign_in'), sign_in_path, class: ['btn', 'btn-lg'] %>
+  </div>
+
+  <!-- TODO: Add repository and license links -->
+  <p class="home-copyright">
+    Made with &hearts; by <%= link_to 'Andreas Philippi', 'https://anphil.github.io', target: '_blank' %>. Find Skriva on <%= link_to 'GitHub', '#', target: '_blank' %>,<br/>or read the copyright information <%= link_to 'here', '#', target: '_blank' %>.
+  </p>
+</div>

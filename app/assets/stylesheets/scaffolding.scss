@@ -1,0 +1,59 @@
+// -----------------------------------------------------------------------------
+// Shared styles
+// -----------------------------------------------------------------------------
+
+body
+{
+  padding-top: $navbar-height;
+}
+
+
+// -----------------------------------------------------------------------------
+// Layout
+// -----------------------------------------------------------------------------
+
+.content-wrapper
+{
+  padding-left: $body-padding-x;
+  padding-right: $body-padding-x;
+  width: 60%;
+}
+
+.overlay-wrapper
+{
+  background-color: $bg-color;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 40%;
+  z-index: $zindex-2;
+}
+
+.navbar
+{
+  left: 0;
+  padding: $unit-4 $body-padding-x;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: $zindex-3;
+
+  .btn-link:hover
+  {
+    box-shadow: none;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Controls
+// -----------------------------------------------------------------------------
+
+.btn
+{
+  &:hover
+  {
+    @include control-shadow();
+  }
+}
