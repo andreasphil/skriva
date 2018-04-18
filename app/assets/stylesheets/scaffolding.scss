@@ -44,9 +44,15 @@ body
   width: 100%;
   z-index: $zindex-3;
 
-  .btn-link:hover
+  .navbar-brand, .btn-link
   {
-    box-shadow: none;
+    color: $gray-color-dark;
+
+    &:hover
+    {
+      box-shadow: none;
+      color: $dark-color;
+    }
   }
 }
 
