@@ -30,4 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  name: 'Skriva'
+  home:
+    index:
+      title: 'Super-Simple Note Taking.'
+      description: 'Skriva gives you a single space to jot down your thoughts and access them through every browser. No files and folders—just a text file that syncs.'

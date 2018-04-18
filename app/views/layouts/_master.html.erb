@@ -11,22 +11,23 @@
   <body>
     <header id="header" class="navbar">
       <section class="navbar-section">
-        <%= link_to 'Skriva', home_index_path, class: ['navbar-brand', 'mr-2'] %>
+        <%= link_to t('name'), home_index_path, class: ['navbar-brand', 'mr-2'] %>
         <% if signed_in? %>
+          <!-- TODO: i18n -->
           <%= link_to 'Edit', notes_index_path, class: ['btn', 'btn-link'] %>
-          <%= button_to t('.sign_out'),
+          <%= button_to t('layouts.application.sign_out'),
             sign_out_path,
             method: :delete, class: ['btn', 'btn-link'] %>
         <% else %>
-          <%= link_to t('.sign_in'), sign_in_path, class: ['btn', 'btn-link'] %>
+          <%= link_to t('layouts.application.sign_in'), sign_in_path, class: ['btn', 'btn-link'] %>
         <% end %>
       </section>
     </header>
 
     <!-- TODO: Style flashes -->
-    <div id="flash">
+    <div class="toast-wrapper">
       <% flash.each do |key, value| %>
-        <div id="flash_<%= key %>"><%=h value %></div>
+        <div class="toast toast-<%= key %>"><%= value %></div>
       <% end %>
     </div>
 
