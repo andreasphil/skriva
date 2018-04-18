@@ -1,3 +1,14 @@
-<div id="clearance" class="password-reset">
+<% content_for :header do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :navigation do %>
+<% end %>
+
+<% content_for :body do %>
   <p><%= t(".description") %></p>
-</div>
+<% end %>
+
+<% content_for :footer do %>
+  <% link_to t('.home'), home_index_path %>
+<% end %>

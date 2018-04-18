@@ -1,0 +1,22 @@
+<%= render layout: 'layouts/master' do |f| %>
+  <div class="content-wrapper">
+    <div class="panel-wrapper">
+      <div class="panel">
+        <div class="panel-header">
+          <div class="panel-title h5"><%= yield :header %></div>
+        </div>
+        <div class="panel-nav">
+          <%= yield :navigation %>
+        </div>
+        <div class="panel-body">
+          <%= yield :body %>
+        </div>
+        <div class="panel-footer">
+          <%= yield :footer %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay-wrapper">
+  </div>
+<% end %>

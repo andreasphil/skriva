@@ -30,6 +30,11 @@ body
   z-index: $zindex-2;
 }
 
+.toast-wrapper
+{
+  @extend .content-wrapper;
+}
+
 .navbar
 {
   left: 0;
@@ -42,6 +47,50 @@ body
   .btn-link:hover
   {
     box-shadow: none;
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Panels
+// -----------------------------------------------------------------------------
+
+.panel-wrapper
+{
+  margin: auto;
+  max-width: 20.0rem;
+  padding: 4.0rem 0;
+  width: 100%;
+}
+
+.panel
+{
+  .panel-header
+  {
+    text-align: center;
+  }
+
+  .panel-body
+  {
+    padding: $layout-spacing-lg;
+
+    .btn
+    {
+      margin-top: $layout-spacing-lg;
+      width: 100%;
+    }
+  }
+
+  .panel-footer
+  {
+    font-size: $font-size-sm;
+    border-top: 1px solid $border-color;
+    text-align: center;
+
+    &, a
+    {
+      @extend .text-gray;
+    }
   }
 }
 

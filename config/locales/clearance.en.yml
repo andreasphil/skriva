@@ -6,54 +6,52 @@ en:
         change_password: Change your password
   clearance_mailer:
     change_password:
-      closing: If you didn't request this, ignore this email. Your password has
-        not been changed.
+      closing: If you didn't request this, ignore this email. Your password has not been changed.
       link_text: Change my password
-      opening: "Someone, hopefully you, requested we send you a link to change
-        your password:"
+      opening: "Someone, hopefully you, requested we send you a link to change your password:"
   flashes:
     failure_after_create: Bad email or password.
-    failure_after_update: Password can't be blank.
-    failure_when_forbidden: Please double check the URL or try submitting
-      the form again.
+    failure_after_update: Please specify a password.
+    failure_when_forbidden: Please double check the URL or try submitting the form again.
     failure_when_not_signed_in: Please sign in to continue.
   helpers:
     label:
       password:
-        email: Email address
+        email: Email
       password_reset:
-        password: Choose password
+        password: Password
     submit:
       password:
         submit: Reset password
       password_reset:
-        submit: Save this password
+        submit: Save
       session:
         submit: Sign in
       user:
-        create: Sign up
+        create: Create account
   layouts:
     application:
+      sign_up: Create account
       sign_in: Sign in
       sign_out: Sign out
   passwords:
     create:
-      description: You will receive an email within the next few minutes. It
-        contains instructions for changing your password.
+      description: You will receive an email within the next few minutes. It contains instructions for changing your password.
+      home: Go back to the homepage
+      title: Reset Your Password
     edit:
-      description: Your password has been reset. Choose a new password below.
-      title: Change your password
+      cancel: Cancel
+      description: Please choose a new password for your account below.
+      title: Change Your Password
     new:
-      description: To be emailed a link to reset your password, please enter
-        your email address.
-      title: Reset your password
+      cancel: Cancel
+      description: To be emailed a link to reset your password, please enter your email address.
+      title: Reset Your Password
   sessions:
-    form:
-      forgot_password: Forgot password?
-      sign_up: Sign up
     new:
-      title: Sign in
+      forgot_password: Did you forget your password?
+      title: Welcome Back!
   users:
     new:
-      sign_in: Sign in
-      title: Sign up
+      cancel: Cancel
+      title: Hello!

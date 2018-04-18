@@ -1,18 +1,26 @@
-<div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
+<% content_for :header do %>
+  <%= t('.title') %>
+<% end %>
 
+<% content_for :navigation do %>
+<% end %>
+
+<% content_for :body do %>
   <p><%= t(".description") %></p>
-
   <%= form_for :password_reset,
-        url: user_password_path(@user, token: @user.confirmation_token),
-        html: { method: :put } do |form| %>
-    <div class="password-field">
-      <%= form.label :password %>
-      <%= form.password_field :password %>
+    url: user_password_path(@user, token: @user.confirmation_token),
+    html: { method: :put } do |form| %>
+    <div class="form-group">
+      <%= form.label :password, class: 'form-label' %>
+      <%= form.password_field :password, class: 'form-input', autofocus: true %>
     </div>
 
     <div class="submit-field">
-      <%= form.submit %>
+      <%= form.submit class: ['btn', 'btn-primary'] %>
     </div>
   <% end %>
-</div>
+<% end %>
+
+<% content_for :footer do %>
+  <% link_to t('.cancel'), sign_in_path %>
+<% end %>

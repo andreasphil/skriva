@@ -1,16 +1,22 @@
-<div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
+<% content_for :header do %>
+  <%= t('.title') %>
+<% end %>
 
+<% content_for :navigation do %>
+<% end %>
+
+<% content_for :body do %>
   <p><%= t(".description") %></p>
-
   <%= form_for :password, url: passwords_path do |form| %>
-    <div class="text-field">
-      <%= form.label :email %>
-      <%= form.text_field :email, type: 'email' %>
+    <div class="form-group">
+      <%= form.label :email, class: 'form-label' %>
+      <%= form.text_field :email, type: 'email', class: 'form-input', autofocus: true %>
     </div>
 
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
+    <%= form.submit class: ['btn', 'btn-primary'] %>
   <% end %>
-</div>
+<% end %>
+
+<% content_for :footer do %>
+  <% link_to t('.cancel'), sign_in_path %>
+<% end %>
