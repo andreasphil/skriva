@@ -12,7 +12,10 @@
     html: { method: :put } do |form| %>
     <div class="form-group">
       <%= form.label :password, class: 'form-label' %>
-      <%= form.password_field :password, class: 'form-input', autofocus: true %>
+      <%= form.password_field :password,
+        class: 'form-input',
+        autofocus: true,
+        placeholder: '••••••••••' %>
     </div>
 
     <div class="submit-field">
