@@ -5,13 +5,16 @@
   </p>
 
   <div class="home-actions">
-    <%= link_to t('layouts.application.sign_up'),
-      sign_up_path,
-      class: ['btn', 'btn-primary', 'btn-lg'] %>
+    <% if Clearance.configuration.allow_sign_up? %>
+      <%= link_to t('layouts.application.sign_up'),
+        sign_up_path,
+        class: ['btn', 'btn-primary', 'btn-lg'] %>
+    <% end %>
     <%= link_to t('layouts.application.sign_in'), sign_in_path, class: ['btn', 'btn-lg'] %>
   </div>
 
   <!-- TODO: Add repository and license links -->
+  <!-- TODO: i18n -->
   <p class="home-copyright">
     Made with &hearts; by <%= link_to 'Andreas Philippi', 'https://anphil.github.io', target: '_blank' %>. Find Skriva on <%= link_to 'GitHub', '#', target: '_blank' %>,<br/>or read the copyright information <%= link_to 'here', '#', target: '_blank' %>.
   </p>

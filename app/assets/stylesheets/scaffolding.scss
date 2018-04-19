@@ -19,6 +19,14 @@ body
   width: 60%;
 }
 
+.content
+{
+  margin: auto;
+  max-width: $content-width;
+  padding: 4.0rem 0;
+  width: 100%;
+}
+
 .overlay-wrapper
 {
   background-color: $bg-color;
@@ -64,10 +72,8 @@ body
 
 .panel-wrapper
 {
-  margin: auto;
-  max-width: 20.0rem;
-  padding: 4.0rem 0;
-  width: 100%;
+  @extend .content;
+  max-width: $content-width-sm;
 }
 
 .panel
@@ -98,18 +104,5 @@ body
     {
       @extend .text-gray;
     }
-  }
-}
-
-
-// -----------------------------------------------------------------------------
-// Controls
-// -----------------------------------------------------------------------------
-
-.btn
-{
-  &:hover
-  {
-    @include control-shadow();
   }
 }

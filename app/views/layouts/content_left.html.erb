@@ -1,7 +1,9 @@
 <%= render layout: 'layouts/master' do |f| %>
+  <!-- Left column -->
   <div class="content-wrapper">
     <%= yield %>
   </div>
-  <div class="overlay-wrapper">
-  </div>
+
+  <!-- Greyed-out right column -->
+  <div class="overlay-wrapper"></div>
 <% end %>

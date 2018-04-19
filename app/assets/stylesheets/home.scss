@@ -4,11 +4,8 @@
 
 .home-content
 {
+  @extend .content;
   text-align: center;
-  margin: auto;
-  max-width: 30.0rem;
-  padding: 4.0rem 0;
-  width: 100%;
 }
 
 
