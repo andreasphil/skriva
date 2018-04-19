@@ -1,18 +1,21 @@
+<!-- Uses page-wide notes controller -->
 <% content_for :toolbar do %>
-  <%= button_tag 'Save', class: ['btn', 'btn-primary'] %>
+  <%= button_tag 'Save',
+    class: ['btn', 'btn-primary'], data: { action: 'click->notes#save' } %>
 <% end %>
 
 <div class="note-content">
-  <div class="note-editor" contenteditable="true">
+  <div class="note-editor" contenteditable="true" data-target="notes.note">
     <%= @note.text %>
   </div>
-</div>
 
-<div class="d-hide">
-  <%= form_with scope: :note, url: notes_update_path do |form| %>
-    <div class="form-group">
-      <%= form.text_area :text, class: 'form-input' %>
-    </div>
-    <%= form.submit class: ['btn', 'btn-success'] %>
-  <% end %>
+  <!-- Shadow form -->
+  <div class="d-hide">
+    <%= form_with scope: :note, url: notes_update_path do |form| %>
+      <div class="form-group">
+        <%= form.text_area :text, class: 'form-input', data: { target: 'notes.input' } %>
+      </div>
+      <%= form.submit class: ['btn', 'btn-success'], data: { target: 'notes.submit' } %>
+    <% end %>
+  </div>
 </div>

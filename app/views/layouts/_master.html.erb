@@ -7,12 +7,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body>
+
+  <%= tag.body data: { controller: @page_controller } do %>
+
+    <!-- Global navigation -->
     <header id="header" class="navbar">
       <section class="navbar-section">
         <%= link_to t('name'), home_index_path, class: ['navbar-brand', 'mr-2'] %>
+
         <% if signed_in? %>
           <!-- TODO: i18n -->
           <%= link_to 'Edit', notes_index_path, class: ['btn', 'btn-link'] %>
@@ -23,18 +27,21 @@
           <%= link_to t('layouts.application.sign_in'), sign_in_path, class: ['btn', 'btn-link'] %>
         <% end %>
       </section>
+
+      <!-- Slot for page-specific navigation/toolbars -->
       <section class="navbar-section">
         <%= yield :toolbar %>
       </section>
     </header>
 
-    <!-- TODO: Style flashes -->
+    <!-- Flash messages -->
     <div class="toast-wrapper">
       <% flash.each do |key, value| %>
         <div class="toast toast-<%= key %>"><%= value %></div>
       <% end %>
     </div>
 
+    <!-- Content -->
     <%= yield %>
-  </body>
+  <% end %>
 </html>
