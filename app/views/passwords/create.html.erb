@@ -10,5 +10,5 @@
 <% end %>
 
 <% content_for :footer do %>
-  <% link_to t('.home'), home_index_path %>
+  <% link_to t('.home'), home_index_path, data: { turbolinks: false } %>
 <% end %>

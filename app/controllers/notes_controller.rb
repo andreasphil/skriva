@@ -1,10 +1,11 @@
 class NotesController < ApplicationController
   before_action :require_login
   before_action :set_note
+  layout 'content_left'
 
   def index
     if @note.nil?
-      current_user.create_note(text: "New Note")
+      current_user.create_note(text: "Hello, here's your note!")
       @note = current_user.note
     end
   end

@@ -22,6 +22,9 @@
           <%= link_to t('layouts.application.sign_in'), sign_in_path, class: ['btn', 'btn-link'] %>
         <% end %>
       </section>
+      <section class="navbar-section">
+        <%= yield :toolbar %>
+      </section>
     </header>
 
     <!-- TODO: Style flashes -->

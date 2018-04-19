@@ -37,11 +37,12 @@ body
 
 .navbar
 {
+  background-color: $bg-color-light;
   left: 0;
   padding: $unit-4 $body-padding-x;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: 60%;
   z-index: $zindex-3;
 
   .navbar-brand, .btn-link

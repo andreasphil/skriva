@@ -1,3 +1,21 @@
+// -----------------------------------------------------------------------------
 // Place all the styles related to the notes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// -----------------------------------------------------------------------------
+
+.note-content
+{
+  margin: auto;
+  max-width: 30.0rem;
+  padding: 4.0rem 0;
+  width: 100%;
+}
+
+.note-editor
+{
+  min-height: 15.0rem;
+
+  &:focus
+  {
+    outline: none;
+  }
+}

@@ -1,7 +1,18 @@
-<h1>Note</h1>
-<%= form_with scope: :note, url: notes_update_path do |form| %>
-  <p>
-    <%= form.text_area :text %>
-  </p>
-  <%= form.submit %>
+<% content_for :toolbar do %>
+  <%= button_tag 'Save', class: ['btn', 'btn-primary'] %>
 <% end %>
+
+<div class="note-content">
+  <div class="note-editor" contenteditable="true">
+    <%= @note.text %>
+  </div>
+</div>
+
+<div class="d-hide">
+  <%= form_with scope: :note, url: notes_update_path do |form| %>
+    <div class="form-group">
+      <%= form.text_area :text, class: 'form-input' %>
+    </div>
+    <%= form.submit class: ['btn', 'btn-success'] %>
+  <% end %>
+</div>
