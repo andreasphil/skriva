@@ -1,5 +1,11 @@
 {
   "name": "skriva",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "3.4",
+    "stimulus": "^1.0.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "2.11.2"
+  }
 }
