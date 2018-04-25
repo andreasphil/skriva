@@ -6,7 +6,8 @@
 
 <div class="note-content">
   <div class="note-editor" contenteditable="true" data-target="notes.note">
-    <%= @note.text %>
+    <!-- TODO: Use HTML sanitizer instead for security reasons -->
+    <%= @note.text.html_safe %>
   </div>
 
   <!-- Shadow form -->
