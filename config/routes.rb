@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   resource :user, only: [:edit, :update]
 
   # Show and save note
-  # TODO: Use single resource
-  get 'notes/index'
-  post 'notes/update'
+  resource :note, only: [:edit, :update]
 
   # Default route
   root 'home#index'

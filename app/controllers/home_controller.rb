@@ -10,6 +10,6 @@ class HomeController < ApplicationController
   private
 
   def redirect_if_logged_in
-    redirect_to notes_index_path if signed_in?
+    redirect_to edit_note_path if signed_in?
   end
 end

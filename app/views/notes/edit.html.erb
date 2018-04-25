@@ -1,4 +1,5 @@
 <!-- Uses page-wide notes controller -->
+
 <% content_for :toolbar do %>
   <%= button_tag t('.save'),
     class: ['btn', 'btn-primary'], data: { action: 'click->notes#save' } %>
@@ -12,7 +13,7 @@
 
   <!-- Shadow form -->
   <div class="d-hide">
-    <%= form_with scope: :note, url: notes_update_path do |form| %>
+    <%= form_with scope: :note, url: note_path, method: :patch do |form| %>
       <div class="form-group">
         <%= form.text_area :text, class: 'form-input', data: { target: 'notes.input' } %>
       </div>

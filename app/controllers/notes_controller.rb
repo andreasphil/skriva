@@ -17,26 +17,26 @@ class NotesController < ApplicationController
   # POST notes/update
   def update
     if @note.update(note_params)
-      redirect_to notes_index_path
+      redirect_to edit_note_path
     else
-      render notes_index_path # TODO: Does this make sense?
+      redirect_to edit_note_path
     end
   end
 
   private
 
-  # Permitted parameters for update
-  def note_params
-    params.require(:note).permit(:text)
+  # Set page-wide JS controller
+  def set_page_controller
+    @page_controller = 'notes'
   end
 
-  # Load note model to context
+  # Load note model into context
   def set_note
     @note = current_user.note
   end
 
-  # Set page-wide JS controller
-  def set_page_controller
-    @page_controller = 'notes'
+  # Permitted parameters for update
+  def note_params
+    params.require(:note).permit(:text)
   end
 end
