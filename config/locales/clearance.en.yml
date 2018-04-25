@@ -29,11 +29,13 @@ en:
         submit: Sign in
       user:
         create: Create account
+        update: Save changes
   layouts:
     application:
       sign_up: Create account
       sign_in: Sign in
       sign_out: Sign out
+      edit_account: Account
   passwords:
     create:
       description: You will receive an email within the next few minutes. It contains instructions for changing your password.
@@ -49,9 +51,15 @@ en:
       title: Reset Your Password
   sessions:
     new:
-      forgot_password: Did you forget your password?
+      forgot_password: Forgot your password?
       title: Welcome Back!
   users:
     new:
       cancel: Cancel
       title: Hello!
+    edit:
+      cancel: Cancel
+      title: Change Account
+    update:
+      error: Something went wrong when saving your changes.
+      success: Your account has been updated!

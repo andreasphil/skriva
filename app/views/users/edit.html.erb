@@ -1,0 +1,17 @@
+<% content_for :header do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :body do %>
+  <%= form_for @user do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit class: ['btn', 'btn-primary'] %>
+    </div>
+  <% end %>
+<% end %>
+
+<% content_for :footer do %>
+  <% link_to t('.cancel'), notes_index_path %>
+<% end %>

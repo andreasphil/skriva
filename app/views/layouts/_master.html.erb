@@ -20,7 +20,9 @@
         <%= link_to t('name'), home_index_path, class: ['navbar-brand', 'mr-2'] %>
 
         <% if signed_in? %>
-          <!-- TODO: i18n -->
+          <%= link_to t('layouts.application.edit_account'),
+            edit_user_path,
+            class: ['btn', 'btn-link'] %>
           <%= button_to t('layouts.application.sign_out'),
             sign_out_path,
             method: :delete, class: ['btn', 'btn-link'] %>
