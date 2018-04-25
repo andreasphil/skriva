@@ -6,6 +6,8 @@ class NotesController < ApplicationController
 
   # GET notes/index
   def index
+    @title = t('.title')
+
     if @note.nil?
       current_user.create_note(text: "Hello, here's your note!")
       @note = current_user.note
@@ -17,7 +19,7 @@ class NotesController < ApplicationController
     if @note.update(note_params)
       redirect_to notes_index_path
     else
-      render notes_path # TODO: Does this make sense?
+      render notes_index_path # TODO: Does this make sense?
     end
   end
 

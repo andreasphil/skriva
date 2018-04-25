@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Skriva</title>
+    <title>
+      Skriva<% if defined? @title %> | <%= @title %><% end %>
+    </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,11 +21,15 @@
 
         <% if signed_in? %>
           <!-- TODO: i18n -->
-          <%= link_to 'Edit', notes_index_path, class: ['btn', 'btn-link'] %>
           <%= button_to t('layouts.application.sign_out'),
             sign_out_path,
             method: :delete, class: ['btn', 'btn-link'] %>
         <% else %>
+          <% if Clearance.configuration.allow_sign_up? %>
+            <%= link_to t('layouts.application.sign_up'),
+              sign_up_path,
+              class: ['btn', 'btn-link'] %>
+          <% end %>
           <%= link_to t('layouts.application.sign_in'), sign_in_path, class: ['btn', 'btn-link'] %>
         <% end %>
       </section>
