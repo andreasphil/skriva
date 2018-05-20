@@ -50,7 +50,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'skriva-app.herokuapp.com' }
   ActionMailer::Base.smtp_settings = {
     address: 'smtp.sendgrid.net',
-    port: '465',
+    port: '587',
     authentication: :plain,
     user_name: ENV['SENDGRID_USERNAME'],
     password: ENV['SENDGRID_PASSWORD'],
