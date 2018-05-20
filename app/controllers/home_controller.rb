@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Home controller
 class HomeController < ApplicationController
   before_action :redirect_if_logged_in
   layout 'content_left'

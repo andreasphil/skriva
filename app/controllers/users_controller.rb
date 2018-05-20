@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# User controller
 class UsersController < ApplicationController
   before_action :require_login
   before_action :set_user
@@ -17,11 +20,11 @@ class UsersController < ApplicationController
 
     if @user.update(params)
       flash[:success] = t('.success')
-      redirect_to edit_user_path
     else
       flash[:error] = t('.error')
-      redirect_to edit_user_path
     end
+
+    redirect_to edit_user_path
   end
 
   private
@@ -35,5 +38,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password)
   end
-
 end

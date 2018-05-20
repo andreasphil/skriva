@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Notes controller
 class NotesController < ApplicationController
   before_action :require_login
   before_action :set_note
@@ -8,19 +11,16 @@ class NotesController < ApplicationController
   def edit
     @title = t('.title')
 
-    if @note.nil?
-      current_user.create_note(text: "Hello, here's your note!")
-      @note = current_user.note
-    end
+    return unless @note.nil?
+
+    # Create a new note if none exists for the user
+    current_user.create_note(text: "Hello, here's your note!")
+    @note = current_user.note
   end
 
   # PATCH note
   def update
-    if @note.update(note_params)
-      # All is fine
-    else
-      raise
-    end
+    raise unless @note.update(note_params)
   end
 
   private
