@@ -1,23 +1,35 @@
 <!-- Uses page-wide notes controller -->
 
 <% content_for :toolbar do %>
-  <%= button_tag t('.save'),
-    class: ['btn', 'btn-primary'], data: { action: 'click->notes#save' } %>
+  <%= button_tag t('.saved'),
+    class: ['btn', 'disabled'],
+    data: {
+      action: 'click->notes#save',
+      target: 'notes.saveButton'
+    } %>
 <% end %>
 
 <div class="note-content">
-  <div class="note-editor" contenteditable="true" data-target="notes.note">
+  <div class="note-editor"
+    contenteditable="true"
+    data-action="input->notes#onNoteInput"
+    data-target="notes.note">
     <!-- TODO: Use HTML sanitizer instead for security reasons -->
     <%= @note.text.html_safe %>
   </div>
 
   <!-- Shadow form -->
   <div class="d-hide">
-    <%= form_with scope: :note, url: note_path, method: :patch do |form| %>
+    <%= form_with scope: :note,
+      url: note_path,
+      method: :patch,
+      data: {
+        action: 'ajax:send->notes#onSend ajax:success->notes#onSuccess ajax:error->notes#onError'
+      } do |form| %>
       <div class="form-group">
         <%= form.text_area :text, class: 'form-input', data: { target: 'notes.input' } %>
       </div>
-      <%= form.submit class: ['btn', 'btn-success'], data: { target: 'notes.submit' } %>
+      <%= form.submit class: ['btn', 'btn-success'], data: { target: 'notes.submitButton' } %>
     <% end %>
   </div>
 </div>
