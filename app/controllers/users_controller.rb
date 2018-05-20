@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @title = t('.title')
   end
 
-  # PATCH, PUT user/update
+  # PATCH user/update
   def update
     params = user_params
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   # Load user model into context
   def set_user
-    @user = current_user # TODO: Use only this?
+    @user = current_user # TODO: Use only current_user?
   end
 
   # Permitted parameters for update

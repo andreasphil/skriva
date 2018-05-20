@@ -4,8 +4,8 @@ class NotesController < ApplicationController
   before_action :set_page_controller
   layout 'content_left'
 
-  # GET notes/index
-  def index
+  # GET note/edit
+  def edit
     @title = t('.title')
 
     if @note.nil?
@@ -14,12 +14,12 @@ class NotesController < ApplicationController
     end
   end
 
-  # POST notes/update
+  # PATCH note
   def update
     if @note.update(note_params)
-      redirect_to edit_note_path
+      # All is fine
     else
-      redirect_to edit_note_path
+      raise
     end
   end
 
