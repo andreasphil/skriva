@@ -1,7 +1,10 @@
 Rails.application.configure do
-  # Verifies that versions and hashed value of the package contents in the project's package.json
+  # Settings specified here will take precedence over those in
+  # config/application.rb.
+
+  # Verifies that versions and hashed value of the package contents in the
+  # project's package.json
   config.webpacker.check_yarn_integrity = true
-  # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
@@ -25,16 +28,17 @@ Rails.application.configure do
     }
   else
     config.action_controller.perform_caching = false
-
     config.cache_store = :null_store
   end
 
-  # Store uploaded files on the local file system (see config/storage.yml for options)
+  # Store uploaded files on the local file system (see config/storage.yml for
+  # options)
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
+  # Disable caching for mailer
   config.action_mailer.perform_caching = false
 
   # Use letter opener in development to preview emails
@@ -60,9 +64,9 @@ Rails.application.configure do
   config.assets.quiet = true
 
   # Raises error for missing translations
-  # config.action_view.raise_on_missing_translations = true
+  config.action_view.raise_on_missing_translations = true
 
-  # Use an evented file watcher to asynchronously detect changes in source code,
-  # routes, locales, etc. This feature depends on the listen gem.
+  # Use an evented file watcher to asynchronously detect changes in source
+  # code, routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end
