@@ -1,3 +1,83 @@
 // -----------------------------------------------------------------------------
 // Place all the styles related to the users controller here.
 // -----------------------------------------------------------------------------
+
+.panel-wrapper {
+  @extend .application;
+  background-color: $bg-color;
+  height: 100%;
+  padding-bottom: 5.0rem;
+  padding-top: 5.0rem;
+}
+
+.panel {
+  @extend .content;
+  @include box-shadow-bottom($gray-color-light);
+  background-color: $bg-color-light;
+  max-width: $content-width-sm;
+  padding: 0;
+
+  .panel-header {
+    text-align: center;
+  }
+
+  .panel-body {
+    padding: $layout-spacing-lg;
+
+    form .submit-field {
+      margin-bottom: $layout-spacing;
+      margin-top: $layout-spacing-lg;
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+
+  .panel-footer {
+    border-top: 0.05rem solid $border-color;
+    font-size: $font-size-sm;
+    text-align: center;
+
+    &, a {
+      @extend .text-gray;
+    }
+  }
+}
+
+
+// -----------------------------------------------------------------------------
+// Tabs
+// -----------------------------------------------------------------------------
+
+.tab {
+  background-color: lighten($bg-color, 1.5%);
+  border-top: 0.05rem solid $border-color;
+  margin-bottom: 0;
+  margin-top: 0;
+
+  &.tab-block .tab-item a {
+    margin-bottom: -0.05rem;
+  }
+
+  .tab-item a {
+    @include control-transition;
+    border-bottom-width: $navbar-control-border;
+    color: $link-color;
+    padding-bottom: ($navbar-control-padding-y - ($navbar-control-border / 2));
+    padding-top: ($navbar-control-padding-y + ($navbar-control-border / 2));
+
+    &:hover {
+      color: $link-color-dark;
+    }
+  }
+
+  .tab-item.active a {
+    border-bottom-color: $primary-color;
+    color: $link-color;
+
+    &:hover {
+      color: $link-color-dark;
+    }
+  }
+}

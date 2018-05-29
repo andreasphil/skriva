@@ -5,7 +5,7 @@ class NotesController < ApplicationController
   before_action :require_login
   before_action :set_note
   before_action :set_page_controller
-  layout 'content_left'
+  layout 'application'
 
   # GET note/edit
   def edit

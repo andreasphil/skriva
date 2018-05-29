@@ -2,17 +2,18 @@
 // Place all the styles related to the notes controller here.
 // -----------------------------------------------------------------------------
 
-.note-content
-{
+.note {
   @extend .content;
 }
 
-.note-editor
-{
+.note-editor {
   min-height: 15.0rem;
 
-  &:focus
-  {
+  &:focus {
     outline: none;
   }
+}
+
+.note-statusBtn {
+  min-width: 7.5rem;
 }

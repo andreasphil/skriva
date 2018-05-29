@@ -24,14 +24,7 @@ export default class extends Controller {
   }
 
   onSuccess(e) {
-    // Indicate that the note was successfully saved
-    this.setSaveButtonState('success')
-
-    // Go back to default state
-    setTimeout(() =>
-    {
-      this.setSaveButtonState('saved')
-    }, 1000)
+    this.setSaveButtonState('saved')
   }
 
   onError(e) {
@@ -40,21 +33,17 @@ export default class extends Controller {
   }
 
   setSaveButtonState(state) {
-    const allClasses = ['disabled', 'loading', 'btn-success', 'btn-error']
+    const allClasses = ['btn-primary', 'disabled', 'loading', 'btn-error']
 
     // TODO: i18n -> Use strings from Rails
     const states = {
       unsavedChanges: {
-        classes: ['test'],
+        classes: ['btn-primary'],
         message: 'Save'
       },
       saving: {
-        classes: ['loading'],
-        message: 'Saving ...'
-      },
-      success: {
-        classes: ['disabled', 'btn-success'],
-        message: 'Saved'
+        classes: ['btn-primary', 'loading'],
+        message: 'Saving'
       },
       saved: {
         classes: ['disabled'],

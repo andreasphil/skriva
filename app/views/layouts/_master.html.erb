@@ -17,22 +17,26 @@
     <!-- Global navigation -->
     <header id="header" class="navbar">
       <section class="navbar-section">
-        <%= link_to t('name'), home_index_path, class: ['navbar-brand', 'mr-2'] %>
-
+        <%= link_to t('name'), home_index_path, class: ['navbar-brand'] %>
         <% if signed_in? %>
-          <%= link_to t('layouts.application.edit_account'),
-            edit_user_path,
+          <%= navbar_link_to t('.edit'),
+            edit_note_path, 
+            class: ['btn', 'btn-link'] %>
+          <%= navbar_link_to current_user.email,
+            edit_user_path, 
             class: ['btn', 'btn-link'] %>
           <%= button_to t('layouts.application.sign_out'),
             sign_out_path,
             method: :delete, class: ['btn', 'btn-link'] %>
         <% else %>
           <% if Clearance.configuration.allow_sign_up? %>
-            <%= link_to t('layouts.application.sign_up'),
+            <%= navbar_link_to t('layouts.application.sign_up'),
               sign_up_path,
               class: ['btn', 'btn-link'] %>
           <% end %>
-          <%= link_to t('layouts.application.sign_in'), sign_in_path, class: ['btn', 'btn-link'] %>
+          <%= navbar_link_to t('layouts.application.sign_in'),
+            sign_in_path,
+            class: ['btn', 'btn-link'] %>
         <% end %>
       </section>
 
@@ -43,7 +47,7 @@
     </header>
 
     <!-- Flash messages -->
-    <div class="toast-wrapper">
+    <div class="toasts">
       <% flash.each do |key, value| %>
         <div class="toast toast-<%= key %>"><%= value %></div>
       <% end %>

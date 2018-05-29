@@ -2,14 +2,14 @@
 
 <% content_for :toolbar do %>
   <%= button_tag t('.saved'),
-    class: ['btn', 'disabled'],
+    class: ['btn', 'note-statusBtn', 'disabled'],
     data: {
       action: 'click->notes#save',
       target: 'notes.saveButton'
     } %>
 <% end %>
 
-<div class="note-content">
+<div class="note">
   <div class="note-editor"
     contenteditable="true"
     data-action="input->notes#onNoteInput"
@@ -29,7 +29,7 @@
       <div class="form-group">
         <%= form.text_area :text, class: 'form-input', data: { target: 'notes.input' } %>
       </div>
-      <%= form.submit class: ['btn', 'btn-success'], data: { target: 'notes.submitButton' } %>
+      <%= form.submit class: ['btn'], data: { target: 'notes.submitButton' } %>
     <% end %>
   </div>
 </div>

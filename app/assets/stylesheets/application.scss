@@ -21,7 +21,7 @@
 @import "mixins";
 
 // Fonts
-// TODO: Switch fonts
+@import url('https://rsms.me/inter/inter-ui.css');
 
 // Spectre
 // TODO: Only import necessary parts
@@ -33,3 +33,4 @@
 // Controller
 @import "home";
 @import "notes";
+@import "users";

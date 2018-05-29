@@ -34,12 +34,14 @@ en:
   home:
     index:
       title: 'Super-Simple Note Taking.'
-      description: 'Skriva gives you a single space to jot down your thoughts and access them through every browser. No files and folders—just a text file that syncs.'
+      description: 'Skriva is a place to jot down your thoughts and access them through every browser. No files and folders—just a text file that syncs.'
+  layouts:
+    master:
+      edit: 'Edit'
   notes:
     edit:
-      save: Save changes
-      saved: Save
+      save: Save
+      saved: Saved
       saving_error: Try again
-      saving_success: Saved!
-      saving: Saving ...
+      saving: Saving
       title: 'Edit Note'

@@ -2,7 +2,36 @@
 // Variables
 // -----------------------------------------------------------------------------
 
-$navbar-height: ($control-size + ($unit-4 * 2) + 0.05rem); // item height + padding + border
 $body-padding-x: $unit-5;
-$content-width: 30.0rem;
 $content-width-sm: 20.0rem;
+$content-width: 30.0rem;
+$navbar-control-border: 0.15rem;
+$navbar-control-padding-y: ($control-padding-y + $unit-3); // default button padding + some extra
+$navbar-height: ($control-size + ($unit-3 * 2) + 0.15rem); // item height + padding + border
+
+
+// -----------------------------------------------------------------------------
+// Spectre customization
+// -----------------------------------------------------------------------------
+
+$body-font-family: 'Inter UI', $base-font-family;
+$border-radius: $unit-1;
+$line-height: 1.2rem;
+$link-color-dark: $dark-color;
+$link-color: $gray-color-dark;
+
+$primary-color-dark: #7235a8;
+$primary-color-light: #bf68dc;
+$primary-color: mix($primary-color-dark, $primary-color-light);
+
+$error-color-dark: hsl(346, 60%, 49%);
+$error-color-light: hsl(359, 71%, 69%);
+$error-color: mix($error-color-light, $error-color-dark);
+
+$warning-color-dark: hsl(38, 83%, 53%);
+$warning-color-light: hsl(43, 86%, 69%);
+$warning-color: mix($warning-color-light, $warning-color-dark);
+
+$success-color-dark: hsl(123, 48%, 44%);
+$success-color-light: hsl(135, 60%, 64%);
+$success-color: mix($success-color-light, $success-color-dark);

@@ -3,7 +3,7 @@
 # Home controller
 class HomeController < ApplicationController
   before_action :redirect_if_logged_in
-  layout 'content_left'
+  layout 'application'
 
   # GET home/index
   def index

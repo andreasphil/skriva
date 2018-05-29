@@ -2,10 +2,9 @@
 // Place all the styles related to the home controller here.
 // -----------------------------------------------------------------------------
 
-.home-content
-{
+.home {
   @extend .content;
-  text-align: center;
+  text-align: left;
 }
 
 
@@ -13,12 +12,10 @@
 // Page elements
 // -----------------------------------------------------------------------------
 
-.home-title
-{
+.home-title {
   margin: 1.0rem 0;
 
-  &:after
-  {
+  &:after {
     animation: blink 0.75s linear infinite alternate;
     border-right: 0.15rem $primary-color solid;
     content: '';
@@ -27,30 +24,31 @@
   }
 }
 
-.home-description
-{
+.home-description {
+  font-size: $font-size-lg;
   margin: 1.0rem 0;
 }
 
-.home-actions
-{
-  margin: 2.0rem 0;
+.home-actions {
+  margin: 2.5rem 0;
 
-  .btn + .btn
-  {
+  .btn {
+    min-width: 7.5rem;
+  }
+
+  .btn + .btn {
     margin-left: $unit-4;
   }
 }
 
-.home-copyright
-{
+.home-footer {
   @extend .text-gray;
   font-size: $font-size-sm;
-  margin-top: 4.0rem;
+  margin-top: 5.0rem;
 
-  a
-  {
+  a {
     @extend .text-gray;
+    @include control-transition;
     text-decoration: underline;
   }
 }
@@ -60,8 +58,7 @@
 // Animations
 // -----------------------------------------------------------------------------
 
-@keyframes blink
-{
+@keyframes blink {
   0% { opacity: 0 }
   100% { opacity: 1 }
 }

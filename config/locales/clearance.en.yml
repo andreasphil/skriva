@@ -3,12 +3,12 @@ en:
   clearance:
     models:
       clearance_mailer:
-        change_password: Change your password
+        change_password: Reset your password
   clearance_mailer:
     change_password:
       closing: If you didn't request this, ignore this email. Your password has not been changed.
-      link_text: Change my password
-      opening: "Someone, hopefully you, requested we send you a link to change your password:"
+      link_text: Get a new password
+      opening: Someone, hopefully you, requested we send you a link to change your password.
   flashes:
     failure_after_create: Bad email or password.
     failure_after_update: Please specify a password.
@@ -29,37 +29,36 @@ en:
         submit: Sign in
       user:
         create: Create account
-        update: Save changes
+        update: Save
   layouts:
     application:
       sign_up: Create account
       sign_in: Sign in
       sign_out: Sign out
-      edit_account: Account
   passwords:
     create:
-      description: You will receive an email within the next few minutes. It contains instructions for changing your password.
+      description: You will receive an email with instructions for changing your password within the next few minutes.
       home: Go back to the homepage
-      title: Reset Your Password
+      title: Reset your password
     edit:
       cancel: Cancel
       description: Please choose a new password for your account below.
-      title: Change Your Password
+      title: Reset your password
     new:
       cancel: Cancel
       description: To be emailed a link to reset your password, please enter your email address.
-      title: Reset Your Password
+      title: Reset your password
   sessions:
     new:
       forgot_password: Forgot your password?
-      title: Welcome Back!
+      title: Welcome back!
   users:
     new:
       cancel: Cancel
       title: Hello!
     edit:
       cancel: Cancel
-      title: Change Account
+      title: Update account
     update:
       error: Something went wrong when saving your changes.
       success: Your account has been updated!

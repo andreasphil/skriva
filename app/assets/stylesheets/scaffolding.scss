@@ -2,9 +2,17 @@
 // Shared styles
 // -----------------------------------------------------------------------------
 
-body
-{
+body, html {
+  height: 100%;
+}
+
+body {
   padding-top: $navbar-height;
+}
+
+.turbolinks-progress-bar {
+  @include gradient-variant($primary-color, $primary-color-light, $primary-color-dark);
+  height: 0.15rem;
 }
 
 
@@ -12,97 +20,121 @@ body
 // Layout
 // -----------------------------------------------------------------------------
 
-.content-wrapper
-{
+.application {
   padding-left: $body-padding-x;
   padding-right: $body-padding-x;
-  width: 60%;
-}
-
-.content
-{
-  margin: auto;
-  max-width: $content-width;
-  padding: 4.0rem 0;
   width: 100%;
 }
 
-.overlay-wrapper
-{
-  background-color: $bg-color;
-  height: 100%;
+.content {
+  margin: auto;
+  max-width: $content-width;
+  padding: 5.0rem 0;
+  width: 100%;
+}
+
+.toasts {
+  left: 50%;
   position: fixed;
-  right: 0;
-  top: 0;
-  width: 40%;
-  z-index: $zindex-2;
+  top: ($navbar-height + $layout-spacing-lg);
+  transform: translateX(-50%);
 }
 
-.toast-wrapper
-{
-  @extend .content-wrapper;
+.toast {
+  border: 0;
+  margin: $layout-spacing-lg auto;
+  text-align: center;
+  width: $content-width-sm;
+
+  &.toast-success {
+    @include box-shadow-bottom($success-color);
+    @include gradient-variant($success-color, $success-color-light, $success-color-dark);
+  }
+
+  &.toast-error {
+    @include box-shadow-bottom($error-color);
+    @include gradient-variant($error-color, $error-color-light, $error-color-dark);
+  }
+
+  &.toast-notice {
+    @include box-shadow-bottom($warning-color);
+    @include gradient-variant($warning-color, $warning-color-light, $warning-color-dark);
+  }
 }
 
-.navbar
-{
+
+// -----------------------------------------------------------------------------
+// Navigation
+// -----------------------------------------------------------------------------
+
+.navbar {
+  @include box-shadow-bottom;
   background-color: $bg-color-light;
   left: 0;
-  padding: $unit-4 $body-padding-x;
+  padding: 0 $body-padding-x;
   position: fixed;
   top: 0;
-  width: 60%;
+  width: 100%;
   z-index: $zindex-3;
 
-  .navbar-brand, .btn-link
-  {
-    color: $gray-color-dark;
-
-    &:hover
-    {
-      box-shadow: none;
-      color: $dark-color;
-    }
-  }
-}
-
-
-// -----------------------------------------------------------------------------
-// Panels
-// -----------------------------------------------------------------------------
-
-.panel-wrapper
-{
-  @extend .content;
-  max-width: $content-width-sm;
-}
-
-.panel
-{
-  .panel-header
-  {
-    text-align: center;
+  .navbar-brand {
+    margin-right: $unit-3;
   }
 
-  .panel-body
-  {
-    padding: $layout-spacing-lg;
-
-    .btn
-    {
-      margin-top: $layout-spacing-lg;
-      width: 100%;
-    }
-  }
-
-  .panel-footer
-  {
+  .btn-link {
+    border-bottom: $navbar-control-border solid transparent;
+    border-radius: 0;
     font-size: $font-size-sm;
-    border-top: 1px solid $border-color;
-    text-align: center;
+    height: $navbar-height;
+    margin: 0 $unit-3;
+    padding-bottom: ($navbar-control-padding-y - ($navbar-control-border / 2));
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: ($navbar-control-padding-y + ($navbar-control-border / 2));
 
-    &, a
-    {
-      @extend .text-gray;
+    &.active {
+      border-bottom-color: $primary-color;
+      color: $link-color;
+
+      &:hover {
+        color: $link-color-dark;
+      }
     }
   }
+}
+
+
+// -----------------------------------------------------------------------------
+// Controls & forms
+// -----------------------------------------------------------------------------
+
+.btn {
+  background-color: $bg-color-dark;
+  border: none;
+  color: $body-font-color;
+  padding-left: $unit-4;
+  padding-right: $unit-4;
+
+  &:hover {
+    color: $body-font-color;
+    background-color: $gray-color-light;
+  }
+
+  &.btn-primary {
+    @include gradient-button-variant($primary-color, $primary-color-light, $primary-color-dark);
+  }
+
+  &.btn-error {
+    @include gradient-button-variant($error-color, $error-color-light, $error-color-dark);
+  }
+
+  &.btn-link {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+.form-label {
+  @extend .text-gray;
+  font-size: $font-size-sm;
 }
