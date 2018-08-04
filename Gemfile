@@ -33,9 +33,9 @@ end
 # Additional gems for development environment
 group :development do
   gem 'web-console', '>= 3.3.0'             # interactive console
-  gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'listen', '>= 3.0.5', '< 3.2'         # listen to file changes
   gem 'spring'                              # keep app running in background
-  gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-watcher-listen', '~> 2.0.0'   # connect spring to 'listen' gem
   gem 'letter_opener'                       # Open mails locally
 end
 
