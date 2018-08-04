@@ -31,7 +31,7 @@ class UsersController < ApplicationController
 
   # Load user model into context
   def set_user
-    @user = current_user # TODO: Use only current_user?
+    @user = current_user
   end
 
   # Permitted parameters for update
