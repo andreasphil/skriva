@@ -1,16 +1,17 @@
 en:
-  name: 'Skriva'
+  name: Skriva
   home:
     index:
-      title: 'Super-Simple Note Taking.'
-      description: 'Skriva is a place to jot down your thoughts and access them through every browser. No files and folders—just a text file that syncs.'
+      title: Super-simple note taking.
+      description: Skriva is a place to jot down your thoughts and access them through every browser. No files and folders—just a text file that syncs.
+      credits_html: 'Made with &hearts; by %{author}. Skriva is published on %{repository}, and provided under the %{license}.'
   layouts:
     master:
-      edit: 'Edit'
+      edit: Write
   notes:
     edit:
       save: Save
       saved: Saved
       saving_error: Try again
       saving: Saving
-      title: 'Edit Note'
+      title: Write

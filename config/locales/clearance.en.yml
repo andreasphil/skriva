@@ -2,15 +2,15 @@ en:
   clearance:
     models:
       clearance_mailer:
-        change_password: Reset your password
+        change_password: Change your password
   clearance_mailer:
     change_password:
       closing: If you didn't request this, ignore this email. Your password has not been changed.
-      link_text: Get a new password
-      opening: Someone, hopefully you, requested we send you a link to change your password.
+      link_text: Change your password
+      opening: 'Hello! Someone, hopefully you, asked for a link to change your password. Here it is:'
   flashes:
-    failure_after_create: Bad email or password.
-    failure_after_update: Please specify a password.
+    failure_after_create: Bad email or password!
+    failure_after_update: Please enter a password!
     failure_when_forbidden: Please double check the URL or try submitting the form again.
     failure_when_not_signed_in: Please sign in to continue.
   helpers:
@@ -19,16 +19,23 @@ en:
         email: Email
       password_reset:
         password: Password
+      user:
+        email: Email
+        password: Password
+        password_confirmation: Confirm password
+      session:
+        email: Email
+        password: Password
     submit:
       password:
-        submit: Reset password
+        submit: Submit
       password_reset:
         submit: Save
       session:
         submit: Sign in
       user:
         create: Create account
-        update: Save
+        update: Update
   layouts:
     application:
       sign_up: Create account
@@ -38,15 +45,15 @@ en:
     create:
       description: You will receive an email with instructions for changing your password within the next few minutes.
       home: Go back to the homepage
-      title: Reset your password
+      title: Change your password
     edit:
       cancel: Cancel
       description: Please choose a new password for your account below.
-      title: Reset your password
+      title: Change your password
     new:
       cancel: Cancel
-      description: To be emailed a link to reset your password, please enter your email address.
-      title: Reset your password
+      description: To be emailed a link to change your password, please enter your email address.
+      title: Change your password
   sessions:
     new:
       forgot_password: Forgot your password?
@@ -57,7 +64,7 @@ en:
       title: Hello!
     edit:
       cancel: Cancel
-      title: Update account
+      title: Account
     update:
       error: Something went wrong when saving your changes.
       success: Your account has been updated!

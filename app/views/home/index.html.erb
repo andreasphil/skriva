@@ -13,13 +13,17 @@
     <%= link_to t('layouts.application.sign_in'), sign_in_path, class: ['btn'] %>
   </div>
 
-  <!-- TODO: i18n -->
   <p class="home-footer">
-    Made with &hearts; by <%= link_to 'Andreas Philippi', 'https://anphil.github.io',
-    target: '_blank' %>. Skriva is published on <%= link_to 'GitHub',
-    'https://github.com/anphil/skriva', target: '_blank' %>, and provided under the
-    <%= link_to 'MIT license', 'https://github.com/anphil/skriva/blob/master/LICENSE.md',
-    target: '_blank' %>.
+    <%= t('.credits_html',
+      author: link_to('Andreas Philippi',
+        'https://anphil.github.io',
+        target: '_blank'),
+      repository: link_to('GitHub',
+        'https://github.com/anphil/skriva',
+        target: '_blank'),
+      license: link_to('MIT license',
+        'https://github.com/anphil/skriva/blob/master/LICENSE.md',
+        target: '_blank')) %>
     </p>
   </p>
 </div>
