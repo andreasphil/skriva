@@ -1,0 +1,71 @@
+en:
+  clearance:
+    models:
+      clearance_mailer:
+        change_password: Kennwort ändern
+  clearance_mailer:
+    change_password:
+      closing: Falls du diesen Link nicht angefordert hast, kannst du diese E-Mail ignorieren. Dein Kennwort wurde nicht geändert.
+      link_text: Kennwort ändern
+      opening: 'Hallo! Irgendjemand, hoffentlich du, hat um einen Link zum Ändern deines Kennworts gebeten. Hier ist er:'
+  flashes:
+    failure_after_create: E-Mail-Adresse oder Kennwort falsch!
+    failure_after_update: Bitte gib ein Kennwort ein.
+    failure_when_forbidden: Bitte überprüfe die URL oder versuche es erneut.
+    failure_when_not_signed_in: Bitte melde dich an, um fortzufahren.
+  helpers:
+    label:
+      password:
+        email: E-Mail
+      password_reset:
+        password: Kennwort
+      user:
+        email: E-Mail
+        password: Kennwort
+        password_confirmation: Kennwort bestätigen
+      session:
+        email: E-Mail
+        password: Kennwort
+    submit:
+      password:
+        submit: Absenden
+      password_reset:
+        submit: Speichern
+      session:
+        submit: Anmelden
+      user:
+        create: Registrieren
+        update: Aktualisieren
+  layouts:
+    application:
+      sign_up: Registrieren
+      sign_in: Anmelden
+      sign_out: Abmelden
+  passwords:
+    create:
+      description: Innerhalb der nächsten Minuten wirst du eine E-Mail mit Anweisungen zum Ändern deines Kennworts erhalten.
+      home: Zurück zur Homepage
+      title: Kennwort ändern
+    edit:
+      cancel: Abbrechen
+      description: Bitte gib im Feld unterhalb ein neues Kennwort für dein Konto ein.
+      title: Kennwort ändern
+    new:
+      cancel: Abbrechen
+      description: Bitte gib deine E-Mail-Adresse ein, um einen Link zum Ändern deines Kennworts zu erhalten.
+      title: Kennwort ändern
+  sessions:
+    new:
+      forgot_password: Kennwort vergessen?
+      title: Wilkommen zurück!
+  users:
+    new:
+      cancel: Abbrechen
+      title: Hallo!
+    edit:
+      cancel: Abbrechen
+      title: Konto
+    update:
+      error: Änderungen konnten nicht gespeichert werden.
+      success: Dein Konto wurde aktualisiert!
+      passwords_dont_match: Die Kennwörter stimmen nicht überein!
