@@ -1,0 +1,29 @@
+// -----------------------------------------------------------------------------
+// Buttons
+// -----------------------------------------------------------------------------
+
+.btn {
+  background-color: $bg-color-dark;
+  border: none;
+  color: $body-font-color;
+  padding-left: $unit-4;
+  padding-right: $unit-4;
+
+  &:hover {
+    color: $body-font-color;
+    background-color: $gray-color-light;
+  }
+
+  &.btn-primary {
+    @include gradient-button-variant($primary-color, $primary-color-light, $primary-color-dark);
+  }
+
+  &.btn-error {
+    @include gradient-button-variant($error-color, $error-color-light, $error-color-dark);
+  }
+
+  &.btn-link {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}

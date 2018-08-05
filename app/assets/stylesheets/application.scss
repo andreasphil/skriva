@@ -23,13 +23,35 @@
 @import url('https://rsms.me/inter/inter-ui.css');
 
 // Spectre
-// TODO: Only import necessary parts
-@import "spectre";
+@import "spectre/normalize";
+@import "spectre/base";
+
+@import "spectre/typography";
+@import "spectre/buttons";
+@import "spectre/forms";
+@import "spectre/labels";
+
+@import "spectre/layout";
+@import "spectre/navbar";
+
+@import "spectre/panels";
+@import "spectre/tabs";
+@import "spectre/toasts";
+
+@import "spectre/animations";
+@import "spectre/utilities";
 
 // Core CSS
 @import "scaffolding";
 
+@import "components/buttons";
+@import "components/forms";
+@import "components/navbar";
+@import "components/panels";
+@import "components/tabs";
+@import "components/toasts";
+
 // Controller
-@import "home";
-@import "notes";
-@import "users";
+@import "controllers/home";
+@import "controllers/notes";
+@import "controllers/users";

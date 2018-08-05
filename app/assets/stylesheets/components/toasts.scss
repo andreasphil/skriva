@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------------------
+// Toasts
+// -----------------------------------------------------------------------------
+
+.toasts {
+  left: 50%;
+  position: fixed;
+  top: ($navbar-height + $layout-spacing-lg);
+  transform: translateX(-50%);
+}
+
+.toast {
+  border: 0;
+  margin: $layout-spacing-lg auto;
+  text-align: center;
+  width: $content-width-sm;
+
+  &.toast-success {
+    @include box-shadow-bottom($success-color);
+    @include gradient-variant($success-color, $success-color-light, $success-color-dark);
+  }
+
+  &.toast-error {
+    @include box-shadow-bottom($error-color);
+    @include gradient-variant($error-color, $error-color-light, $error-color-dark);
+  }
+
+  &.toast-notice {
+    @include box-shadow-bottom($warning-color);
+    @include gradient-variant($warning-color, $warning-color-light, $warning-color-dark);
+  }
+}

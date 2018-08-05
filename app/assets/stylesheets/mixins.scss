@@ -15,8 +15,8 @@
   @include box-shadow-bottom($color);
   @include gradient-variant($color, $color-light, $color-dark);
 
-  &:hover {
-    @include box-shadow-bottom($color, 0.1rem);
+  &:hover, &:focus {
+    @include box-shadow-bottom($color, 0.3rem);
     @include gradient-variant($color, $color-light, $color-dark);
   }
 }
