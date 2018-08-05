@@ -3,6 +3,8 @@ import { Controller } from 'stimulus'
 export default class extends Controller {
   static targets = ['note', 'saveButton', 'input', 'submitButton']
 
+  /* Events ---------------------------------------------------------------- */
+
   save() {
     const noteContent = this.noteTarget.innerHTML
     const shadowNoteInput = this.inputTarget
@@ -32,6 +34,8 @@ export default class extends Controller {
     this.setSaveButtonState('error')
   }
 
+  /* Helpers --------------------------------------------------------------- */
+
   setSaveButtonState(state) {
     const allClasses = ['btn-primary', 'disabled', 'loading', 'btn-error']
 
@@ -55,6 +59,7 @@ export default class extends Controller {
        }
     }
 
+    // Reset button state and apply new state classes
     const saveButton = this.saveButtonTarget
     saveButton.classList.remove(...allClasses)
     saveButton.classList.add(...states[state].classes)

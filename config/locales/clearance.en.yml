@@ -61,3 +61,4 @@ en:
     update:
       error: Something went wrong when saving your changes.
       success: Your account has been updated!
+      passwords_dont_match: Passwords don't match!

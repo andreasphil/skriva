@@ -1,3 +1,4 @@
+<!-- Email -->
 <div class="form-group">
   <%= form.label :email, class: 'form-label' %>
   <%= form.text_field :email,
@@ -7,7 +8,14 @@
     placeholder: 'joe@example.com' %>
 </div>
 
+<!-- Password -->
 <div class="form-group">
   <%= form.label :password, class: 'form-label' %>
-  <%= form.password_field :password, class: 'form-input', placeholder: '••••••••••' %>
+  <%= form.password_field :password,
+    class: 'form-input',
+    placeholder: '••••••••••',
+    data: {
+      action: 'input->users#onPasswordInput',
+      target: 'users.passwordField'
+    } %>
 </div>
