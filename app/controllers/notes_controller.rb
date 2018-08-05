@@ -5,6 +5,7 @@ class NotesController < ApplicationController
   before_action :require_login
   before_action :set_note
   before_action :set_page_controller
+  before_action :set_client_locales
   layout 'application'
 
   # GET note/edit
@@ -33,6 +34,16 @@ class NotesController < ApplicationController
   # Load note model into context
   def set_note
     @note = current_user.note
+  end
+
+  # Pass some i18n phrases to the client to be used in JavaScript
+  def set_client_locales
+    @client_locales = {
+      'notes.edit.save' => t('.save'),
+      'notes.edit.saved' => t('.saved'),
+      'notes.edit.saving_error' => t('.saving_error'),
+      'notes.edit.saving' => t('.saving')
+    }
   end
 
   # Permitted parameters for update

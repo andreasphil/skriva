@@ -10,6 +10,12 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <% if @client_locales %>
+    <script>
+      window.locales = <%= raw @client_locales.to_json %>
+    </script>
+    <% end %>
   </head>
 
   <%= tag.body data: { controller: @page_controller } do %>
@@ -20,10 +26,10 @@
         <%= link_to t('name'), home_index_path, class: ['navbar-brand'] %>
         <% if signed_in? %>
           <%= navbar_link_to t('.edit'),
-            edit_note_path, 
+            edit_note_path,
             class: ['btn', 'btn-link'] %>
           <%= navbar_link_to current_user.email,
-            edit_user_path, 
+            edit_user_path,
             class: ['btn', 'btn-link'] %>
           <%= button_to t('layouts.application.sign_out'),
             sign_out_path,

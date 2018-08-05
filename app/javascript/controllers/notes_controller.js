@@ -1,7 +1,14 @@
 import { Controller } from 'stimulus'
+import { default as Polyglot } from 'node-polyglot'
 
 export default class extends Controller {
   static targets = ['note', 'saveButton', 'input', 'submitButton']
+
+  /* Hooks ----------------------------------------------------------------- */
+
+  connect() {
+    this.polyglot = new Polyglot({ phrases: window.locales })
+  }
 
   /* Events ---------------------------------------------------------------- */
 
@@ -26,6 +33,7 @@ export default class extends Controller {
   }
 
   onSuccess(e) {
+    // Indicate thet the note was saved successfully
     this.setSaveButtonState('saved')
   }
 
@@ -39,23 +47,22 @@ export default class extends Controller {
   setSaveButtonState(state) {
     const allClasses = ['btn-primary', 'disabled', 'loading', 'btn-error']
 
-    // TODO: i18n -> Use strings from Rails
     const states = {
       unsavedChanges: {
         classes: ['btn-primary'],
-        message: 'Save'
+        message: this.polyglot.t('notes.edit.save')
       },
       saving: {
         classes: ['btn-primary', 'loading'],
-        message: 'Saving'
+        message: this.polyglot.t('notes.edit.saving')
       },
       saved: {
         classes: ['disabled'],
-        message: 'Saved'
+        message: this.polyglot.t('notes.edit.saved')
       },
       error: {
         classes: ['btn-error'],
-        message: 'Try again'
+        message: this.polyglot.t('notes.edit.saving_error')
        }
     }
 
