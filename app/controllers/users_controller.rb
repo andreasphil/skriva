@@ -40,10 +40,13 @@ class UsersController < ApplicationController
     password_params = params.require(:user).permit(:password,
       :password_confirmation)
 
-    if password_params[:password] != password_params[:password_confirmation]
-      flash[:error] = t('.passwords_dont_match')
-      redirect_to edit_user_path
-    end
+    # We're done if password and confirmation match
+    return if password_params[:password] ==
+      password_params[:password_confirmation]
+
+    # Otherwise, cancel request and show an error message
+    flash[:error] = t('.passwords_dont_match')
+    redirect_to edit_user_path
   end
 
   # Permitted parameters for update
