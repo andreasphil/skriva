@@ -4,13 +4,22 @@ import { default as MediumEditor } from 'medium-editor'
 
 export default class extends Controller {
   static targets = ['note', 'saveButton', 'input', 'submitButton']
+  static editorConfig = {
+    toolbar: {
+      buttons: ['bold', 'italic', 'underline', 'orderedlist', 'unorderedlist', 'pre', 'quote']
+    },
+    paste: {
+      forcePlainText: true
+    },
+    autoLink: true,
+    anchorPreview: false
+  }
 
   /* Hooks ----------------------------------------------------------------- */
 
   connect() {
     this.polyglot = new Polyglot({ phrases: window.locales })
-
-    this.editor = new MediumEditor(this.noteTarget)
+    this.editor = new MediumEditor(this.noteTarget, this.editorConfig)
   }
 
   /* Events ---------------------------------------------------------------- */

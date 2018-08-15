@@ -17,3 +17,80 @@
 .note-statusBtn {
   min-width: 7.5rem;
 }
+
+
+// -----------------------------------------------------------------------------
+// MediumEditor toolbar
+// -----------------------------------------------------------------------------
+
+.medium-editor-toolbar {
+  @include box-shadow-bottom();
+  
+  &, & li button {
+    background: $dark-color;
+    border: none;
+  }
+
+  & li button {
+    box-shadow: none;
+    color: $light-color;
+
+    &:hover {
+      background: lighten($dark-color, 10%);
+      color: $light-color;
+    }
+
+    &.medium-editor-button-active {
+      background: darken($dark-color, 5%);
+    }
+
+    &.medium-editor-action-pre {
+      font-size: inherit;
+    }
+  }
+}
+
+.medium-toolbar-arrow-under:after {
+  border-top-color: $dark-color;
+}
+
+
+// -----------------------------------------------------------------------------
+// Editor typography styles
+// -----------------------------------------------------------------------------
+
+.note-editor {
+  a {
+    @include control-transition();
+    color: $primary-color-light;
+
+    &:hover {
+      color: $primary-color;
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin-bottom: $unit-5;
+    line-height: 1.5;
+  }
+
+  ol, ul {
+    list-style-position: outside;
+    padding-left: $unit-5;
+
+    li {
+      line-height: 1.5;
+      margin-top: 0;
+    }
+  }
+
+  blockquote {
+    font-size: $font-size-lg;
+  }
+
+  pre {
+    font-size: $font-size-sm;
+    white-space: pre-wrap;
+  }
+}
