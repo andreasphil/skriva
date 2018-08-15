@@ -1,5 +1,6 @@
 import { Controller } from 'stimulus'
 import { default as Polyglot } from 'node-polyglot'
+import { default as MediumEditor } from 'medium-editor'
 
 export default class extends Controller {
   static targets = ['note', 'saveButton', 'input', 'submitButton']
@@ -8,6 +9,8 @@ export default class extends Controller {
 
   connect() {
     this.polyglot = new Polyglot({ phrases: window.locales })
+
+    this.editor = new MediumEditor(this.noteTarget)
   }
 
   /* Events ---------------------------------------------------------------- */

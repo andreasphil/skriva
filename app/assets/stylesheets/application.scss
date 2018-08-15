@@ -41,6 +41,10 @@
 @import "spectre/animations";
 @import "spectre/utilities";
 
+// MediumEditor
+@import "medium-editor/src/sass/medium-editor";
+@import "medium-editor/src/sass/themes/default";
+
 // Core CSS
 @import "scaffolding";
 
