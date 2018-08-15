@@ -20,6 +20,7 @@ gem 'webpacker', '~> 3.4.3'                 # frontend code packer
 # Libraries & assets
 gem 'clearance', '~> 1.16.1'                # authentication framework
 gem 'jbuilder', '~> 2.5'                    # JSON API builder
+gem 'http_accept_language'                  # Fetch language info from requests
 gem 'spectre_scss', '~> 0.5.1.0'            # CSS framework
 gem 'turbolinks', '~> 5'                    # page fetching
 
