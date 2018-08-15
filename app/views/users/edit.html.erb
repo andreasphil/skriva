@@ -3,7 +3,7 @@
 <% end %>
 
 <% content_for :body do %>
-  <%= form_for @user, data: { controller: 'users' } do |form| %>
+  <%= form_for @user, data: { stimulus_controller: 'users' } do |form| %>
     <%= render partial: '/users/form', object: form %>
 
     <!-- Additional password confirmation field -->
@@ -13,13 +13,13 @@
         class: 'form-input',
         placeholder: '••••••••••',
         data: {
-          action: 'input->users#onPasswordInput',
-          target: 'users.passwordConfirmationField'
+          stimulus_action: 'input->users#onPasswordInput',
+          stimulus_target: 'users.passwordConfirmationField'
         } %>
     </div>
 
     <div class="submit-field">
-      <%= form.submit class: ['btn', 'btn-primary'], data: { target: 'users.submitButton' } %>
+      <%= form.submit class: ['btn', 'btn-primary'], data: { stimulus_target: 'users.submitButton' } %>
     </div>
   <% end %>
 <% end %>
