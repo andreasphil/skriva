@@ -3,11 +3,13 @@ import { default as Polyglot } from 'node-polyglot'
 import { default as MediumEditor } from 'medium-editor'
 
 export default class extends Controller {
-  static targets = ['note', 'saveButton', 'input', 'submitButton']
+  static get targets () {
+    return ['passwordField', 'passwordConfirmationField', 'submitButton']
+  }
 
   /* Hooks ----------------------------------------------------------------- */
 
-  connect() {
+  connect () {
     this.polyglot = new Polyglot({ phrases: window.locales })
     this.editor = new MediumEditor(this.noteTarget, {
       toolbar: {
@@ -23,7 +25,7 @@ export default class extends Controller {
 
   /* Events ---------------------------------------------------------------- */
 
-  save() {
+  save () {
     const noteContent = this.noteTarget.innerHTML
     const shadowNoteInput = this.inputTarget
     const shadowSubmitButton = this.submitButtonTarget
@@ -33,29 +35,29 @@ export default class extends Controller {
     shadowSubmitButton.click()
   }
 
-  onNoteInput(e) {
+  onNoteInput (e) {
     // Activate the button to save the note when it has changed
     this.setSaveButtonState('unsavedChanges')
   }
 
-  onSend(e) {
+  onSend (e) {
     // Indicate that the note is being saved
     this.setSaveButtonState('saving')
   }
 
-  onSuccess(e) {
+  onSuccess (e) {
     // Indicate thet the note was saved successfully
     this.setSaveButtonState('saved')
   }
 
-  onError(e) {
+  onError (e) {
     // Indicate that the saving failed
     this.setSaveButtonState('error')
   }
 
   /* Helpers --------------------------------------------------------------- */
 
-  setSaveButtonState(state) {
+  setSaveButtonState (state) {
     const allClasses = ['btn-primary', 'disabled', 'loading', 'btn-error']
 
     const states = {
@@ -74,7 +76,7 @@ export default class extends Controller {
       error: {
         classes: ['btn-error'],
         message: this.polyglot.t('notes.edit.saving_error')
-       }
+      }
     }
 
     // Reset button state and apply new state classes
