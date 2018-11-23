@@ -4,7 +4,7 @@ import { default as MediumEditor } from 'medium-editor'
 
 export default class extends Controller {
   static get targets () {
-    return ['passwordField', 'passwordConfirmationField', 'submitButton']
+    return ['note', 'saveButton', 'input', 'submitButton']
   }
 
   /* Hooks ----------------------------------------------------------------- */
