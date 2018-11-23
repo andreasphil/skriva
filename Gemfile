@@ -37,7 +37,8 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'         # listen to file changes
   gem 'spring'                              # keep app running in background
   gem 'spring-watcher-listen', '~> 2.0.0'   # connect spring to 'listen' gem
-  gem 'letter_opener'                       # Open mails locally
+  gem 'letter_opener'                       # open mails locally
+  gem 'rubocop'                             # code linter
 end
 
 
