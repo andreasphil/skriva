@@ -25,7 +25,7 @@
 
 .medium-editor-toolbar {
   @include box-shadow-bottom();
-  
+
   &, & li button {
     background: $dark-color;
     border: none;
@@ -81,6 +81,11 @@
 
     li {
       line-height: 1.5;
+      margin-top: 0;
+    }
+
+    & > ol, ul {
+      margin-bottom: 0;
       margin-top: 0;
     }
   }
