@@ -60,6 +60,18 @@
 // -----------------------------------------------------------------------------
 
 .note-editor {
+  h1, h2 {
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
   a {
     @include control-transition();
     color: $primary-color-light;

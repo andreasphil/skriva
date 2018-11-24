@@ -13,7 +13,8 @@ export default class extends Controller {
     this.polyglot = new Polyglot({ phrases: window.locales })
     this.editor = new MediumEditor(this.noteTarget, {
       toolbar: {
-        buttons: ['bold', 'italic', 'underline', 'orderedlist', 'unorderedlist', 'pre', 'quote']
+        buttons: ['h1', 'h2', 'bold', 'italic', 'underline', 'orderedlist',
+          'unorderedlist', 'pre', 'quote']
       },
       paste: {
         forcePlainText: true
