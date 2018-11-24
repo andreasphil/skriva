@@ -1,5 +1,4 @@
 <!-- Uses page-wide notes controller -->
-
 <% content_for :toolbar do %>
   <%= button_tag t('.saved'),
     class: ['btn', 'note-statusBtn', 'disabled'],
@@ -13,7 +12,7 @@
   <div class="note-editor"
     data-stimulus-action="input->notes#onNoteInput"
     data-stimulus-target="notes.note">
-    <!-- TODO: Use HTML sanitizer instead for security reasons -->
+    <%# TODO: Use HTML sanitizer instead for security reasons %>
     <%= @note.text.html_safe %>
   </div>
 
@@ -23,7 +22,7 @@
       url: note_path,
       method: :patch,
       data: {
-        stimulus_action: 
+        stimulus_action:
           'ajax:send->notes#onSend ajax:success->notes#onSuccess ajax:error->notes#onError'
       } do |form| %>
       <div class="form-group">

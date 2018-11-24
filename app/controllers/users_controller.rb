@@ -38,11 +38,11 @@ class UsersController < ApplicationController
   # Make sure that password and confirmation match
   def validate_password_confirmation
     password_params = params.require(:user).permit(:password,
-      :password_confirmation)
+                                                   :password_confirmation)
 
     # We're done if password and confirmation match
     return if password_params[:password] ==
-      password_params[:password_confirmation]
+              password_params[:password_confirmation]
 
     # Otherwise, cancel request and show an error message
     flash[:error] = t('.passwords_dont_match')
