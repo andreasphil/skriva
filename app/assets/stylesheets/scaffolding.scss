@@ -21,6 +21,8 @@ body {
 // -----------------------------------------------------------------------------
 
 .application {
+  background-color: $bg-color-light;
+  min-height: 100%;
   padding-left: $body-padding-x;
   padding-right: $body-padding-x;
   width: 100%;

@@ -14,6 +14,7 @@ $navbar-height: ($control-size + ($unit-3 * 2) + 0.15rem); // item height + padd
 // Spectre customization
 // -----------------------------------------------------------------------------
 
+$body-bg: $bg-color;
 $body-font-family: 'Inter UI', $base-font-family;
 $border-radius: $unit-1;
 $line-height: 1.2rem;
