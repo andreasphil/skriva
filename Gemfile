@@ -13,15 +13,15 @@ gem 'puma', '~> 3.11'                       # app server
 gem 'bootsnap', '>= 1.1.0', require: false  # reduced boot time through caching
 
 # Code processors
-gem 'sass-rails', '~> 5.0'                  # stylesheet preprocessor
+gem 'sassc-rails', '~> 2.0.0'               # stylesheet preprocessor
 gem 'uglifier', '>= 1.3.0'                  # JavaScript uglifier
-gem 'webpacker', '~> 3.4.3'                 # frontend code packer
+gem 'webpacker', '~> 3.5.5'                 # frontend code packer
 
 # Libraries & assets
 gem 'clearance', '~> 1.16.1'                # authentication framework
 gem 'jbuilder', '~> 2.5'                    # JSON API builder
 gem 'http_accept_language'                  # Fetch language info from requests
-gem 'spectre_scss', '~> 0.5.1.0'            # CSS framework
+gem 'spectre_scss', '~> 0.5.7.0'            # CSS framework
 gem 'turbolinks', '~> 5'                    # page fetching
 
 

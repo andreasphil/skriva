@@ -48,7 +48,6 @@
 
   a {
     @extend .text-gray;
-    @include control-transition;
     text-decoration: underline;
   }
 }
