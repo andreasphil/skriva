@@ -6,7 +6,7 @@
   <%= form_for @user, data: { stimulus_controller: 'users' } do |form| %>
     <%= render partial: '/users/form', object: form %>
 
-    <!-- Additional password confirmation field -->
+    <%# Additional password confirmation field %>
     <div class="form-group">
       <%= form.label :password_confirmation, class: 'form-label' %>
       <%= form.password_field :password_confirmation,

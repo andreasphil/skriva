@@ -73,7 +73,6 @@
   }
 
   a {
-    @include control-transition();
     color: $primary-color-light;
 
     &:hover {

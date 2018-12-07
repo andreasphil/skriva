@@ -12,7 +12,6 @@
   }
 
   .tab-item a {
-    @include control-transition;
     border-bottom-width: $navbar-control-border;
     color: $link-color;
     padding-bottom: ($navbar-control-padding-y - ($navbar-control-border / 2));
