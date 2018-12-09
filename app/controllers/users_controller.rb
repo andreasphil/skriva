@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :require_login
   before_action :set_user
   before_action :validate_password_confirmation, only: :update
-  layout 'panel'
+  layout 'fullscreen_panel'
 
   # GET user/edit
   def edit

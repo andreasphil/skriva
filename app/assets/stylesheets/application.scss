@@ -9,51 +9,33 @@
  * CSS/SCSS files in this directory. Styles in this file should be added after the last
  * require_* statement. It is generally better to create a new file per style scope.
  *
+ *= require normalize-rails
  *= require_self
  */
 
 // Variables and mixins
-@import "spectre/variables";
-@import "spectre/mixins";
-
-@import "variables";
-@import "mixins";
+@import "base/variables";
+@import "base/mixins";
 
 // Fonts
 @import url('https://rsms.me/inter/inter-ui.css');
-
-// Spectre
-@import "spectre/normalize";
-@import "spectre/base";
-
-@import "spectre/typography";
-@import "spectre/buttons";
-@import "spectre/forms";
-@import "spectre/labels";
-
-@import "spectre/layout";
-@import "spectre/navbar";
-
-@import "spectre/panels";
-@import "spectre/tabs";
-@import "spectre/toasts";
-
-@import "spectre/animations";
-@import "spectre/utilities";
 
 // MediumEditor
 @import "medium-editor/src/sass/medium-editor";
 @import "medium-editor/src/sass/themes/default";
 
-// Core CSS
-@import "scaffolding";
+// Base
+@import "base/base";
+@import "base/typography";
+@import "base/layout";
 
+// Components
 @import "components/buttons";
 @import "components/forms";
-@import "components/navbar";
+@import "components/notifications";
 @import "components/panels";
 @import "components/tabs";
-@import "components/toasts";
+@import "components/turbolinks";
 
 // Controller
 @import "controllers/home";

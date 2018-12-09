@@ -1,0 +1,59 @@
+/* -------------------------------------------------- *
+ * Buttons                                            *
+ * -------------------------------------------------- */
+
+@mixin gradient-button($bg, $bg-light, $bg-dark, $text: $link-color) {
+  @include background-gradient($bg, $bg-light, $bg-dark);
+  @include box-shadow-bottom($bg);
+  color: $text;
+
+  &:hover, &:focus {
+    @include background-gradient($bg, $bg-light, $bg-dark);
+    @include box-shadow-bottom($bg, 0.3rem);
+    color: $text;
+  }
+}
+
+.button {
+  background-color: $button-default-background;
+  border-radius: $border-radius;
+  border: none;
+  cursor: pointer;
+  color: $body-color;
+  padding: $baseline-small-x2 $baseline-small-x3;
+  text-align: center;
+  transition: background-color $transition, box-shadow $transition, color $transition;
+
+  &:hover {
+    background-color: $button-default-hover-background;
+    color: $body-color;
+    text-decoration: none;
+  }
+
+  & + & {
+    margin-left: $baseline-x2;
+  }
+
+  &--primary {
+    @include gradient-button($primary-color,
+      $primary-color-light,
+      $primary-color-dark,
+      $light-color);
+  }
+
+  &--error {
+    @include gradient-button($error-color,
+      $error-color-light,
+      $error-color-dark,
+      $light-color);
+  }
+
+  &--link {
+    background-color: transparent;
+    box-shadow: none;
+  }
+}
+
+a.button {
+  display: inline-block;
+}

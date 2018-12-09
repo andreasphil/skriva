@@ -1,0 +1,65 @@
+/* -------------------------------------------------- *
+ * Home controller                                    *
+ * -------------------------------------------------- */
+
+.home {
+  @include position(absolute, 0);
+  @extend .grid;
+  align-items: center;
+  display: flex;
+  margin: auto;
+  max-width: $screen-large;
+
+  &__left, &__right {
+    @extend .grid__col;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__left {
+    @include make-grid-column(7);
+  }
+
+  &__right {
+    @include make-grid-column(5);
+  }
+
+  &__title {
+    margin: $baseline-x3 0;
+
+    &:after {
+      animation: blink 0.75s linear infinite alternate;
+      border-right: 0.15rem $primary-color solid;
+      content: '';
+    }
+  }
+
+  &__description {
+    font-size: $font-size-large;
+    margin: $baseline-x3 0;
+  }
+
+  &__footer {
+    @extend .text--gray;
+    font-size: $font-size-small;
+    margin: ($baseline-x5 * 2) 0 $baseline-x3 0;
+  }
+}
+
+// Media queries
+@media (max-width: $screen-medium) {
+  .home {
+    @include position(unset, unset);
+
+    &__left, &__right {
+      @include make-grid-column(12);
+    }
+  }
+}
+
+// Animations
+@keyframes blink {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

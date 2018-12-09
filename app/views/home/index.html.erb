@@ -1,29 +1,27 @@
 <div class="home">
-  <h1 class="home-title"><%= t('.title') %></h1>
-  <p class="home-description">
-    <%= t('.description') %>
-  </p>
-
-  <div class="home-actions">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t('layouts.application.sign_up'),
-        sign_up_path,
-        class: ['btn', 'btn-primary'] %>
-    <% end %>
-    <%= link_to t('layouts.application.sign_in'), sign_in_path, class: ['btn'] %>
+  <div class="grid__cols">
+    <div class="home__left">
+      <div>
+        <h1 class="home__title"><%= t('.title') %></h1>
+        <p class="home__description">
+          <%= t('.description') %>
+        </p>
+        <p class="home__footer">
+          <%= t('.credits_html',
+            author: link_to('Andreas Philippi',
+              'https://anphil.github.io',
+              target: '_blank'),
+            repository: link_to('GitHub',
+              'https://github.com/anphil/skriva',
+              target: '_blank'),
+            license: link_to('MIT license',
+              'https://github.com/anphil/skriva/blob/master/LICENSE.md',
+              target: '_blank')) %>
+        </p>
+      </div>
+    </div>
+    <div class="home__right">
+      <%= render partial: 'sessions/new', layout: 'layouts/panel' %>
+    </div>
   </div>
-
-  <p class="home-footer">
-    <%= t('.credits_html',
-      author: link_to('Andreas Philippi',
-        'https://anphil.github.io',
-        target: '_blank'),
-      repository: link_to('GitHub',
-        'https://github.com/anphil/skriva',
-        target: '_blank'),
-      license: link_to('MIT license',
-        'https://github.com/anphil/skriva/blob/master/LICENSE.md',
-        target: '_blank')) %>
-    </p>
-  </p>
 </div>

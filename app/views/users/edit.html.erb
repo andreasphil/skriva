@@ -4,13 +4,13 @@
 
 <% content_for :body do %>
   <%= form_for @user, data: { stimulus_controller: 'users' } do |form| %>
-    <%= render partial: '/users/form', object: form %>
+    <%= render partial: 'users/form', object: form %>
 
     <%# Additional password confirmation field %>
-    <div class="form-group">
-      <%= form.label :password_confirmation, class: 'form-label' %>
+    <div class="form__group">
+      <%= form.label :password_confirmation, class: 'form__label' %>
       <%= form.password_field :password_confirmation,
-        class: 'form-input',
+        class: 'form__input',
         placeholder: '••••••••••',
         data: {
           stimulus_action: 'input->users#onPasswordInput',
@@ -18,8 +18,8 @@
         } %>
     </div>
 
-    <div class="submit-field">
-      <%= form.submit class: ['btn', 'btn-primary'], data: { stimulus_target: 'users.submitButton' } %>
+    <div class="form__submit">
+      <%= form.submit class: ['button', 'button--primary'], data: { stimulus_target: 'users.submitButton' } %>
     </div>
   <% end %>
 <% end %>

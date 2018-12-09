@@ -13,9 +13,9 @@ module Skriva
 
     # Set layouts for clearance
     config.to_prepare do
-      Clearance::PasswordsController.layout 'panel'
-      Clearance::SessionsController.layout 'panel'
-      Clearance::UsersController.layout 'panel'
+      Clearance::PasswordsController.layout 'fullscreen_panel'
+      Clearance::SessionsController.layout 'fullscreen_panel'
+      Clearance::UsersController.layout 'fullscreen_panel'
     end
 
     # Set available localizations

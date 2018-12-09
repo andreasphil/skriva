@@ -1,0 +1,33 @@
+/* -------------------------------------------------- *
+ * Layout                                             *
+ * -------------------------------------------------- */
+
+@mixin make-grid-column($width) {
+  flex-basis: auto;
+  width: percentage($width / $grid-columns);
+}
+
+.base-container {
+  padding: $grid-gutter;
+}
+
+.grid {
+  padding: 0 $grid-gutter;
+
+  &__cols {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 (-$grid-gutter);
+  }
+
+  &__col {
+    @extend .base-container;
+    flex: 1 1 0;
+
+    @for $i from 1 through $grid-columns {
+      &--#{$i} {
+        @include make-grid-column($i);
+      }
+    }
+  }
+}

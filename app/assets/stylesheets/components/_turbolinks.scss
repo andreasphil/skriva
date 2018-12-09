@@ -1,0 +1,8 @@
+/* -------------------------------------------------- *
+ * Turbolinks                                         *
+ * -------------------------------------------------- */
+
+.turbolinks-progress-bar {
+  @include background-gradient($primary-color, $primary-color-light, $primary-color-dark);
+  height: 0.15rem;
+}

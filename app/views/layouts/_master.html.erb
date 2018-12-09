@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>
-      Skriva<% if defined? @title %> | <%= @title %><% end %>
-    </title>
+    <title>Skriva<% if defined? @title %> | <%= @title %><% end %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -20,8 +20,8 @@
 
   <%= tag.body data: { stimulus_controller: @page_controller } do %>
 
-    <!-- Global navigation -->
-    <header id="header" class="navbar">
+    <%# Global navigation %>
+    <!-- <header id="header" class="navbar">
       <section class="navbar-section">
         <%= link_to t('name'), home_index_path, class: ['navbar-brand'] %>
         <% if signed_in? %>
@@ -46,18 +46,15 @@
         <% end %>
       </section>
 
-      <!-- Slot for page-specific navigation/toolbars -->
       <section class="navbar-section">
         <%= yield :toolbar %>
       </section>
-    </header>
+    </header>-->
 
-    <!-- Flash messages -->
-    <div class="toasts">
-      <% flash.each do |key, value| %>
-        <div class="toast toast-<%= key %>"><%= value %></div>
-      <% end %>
-    </div>
+    <%# Flash messages %>
+    <% unless @template_renders_notifications %>
+      <%= render partial: 'shared/notifications' %>
+    <% end %>
 
     <!-- Content -->
     <%= yield %>

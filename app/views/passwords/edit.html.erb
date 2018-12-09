@@ -7,16 +7,16 @@
   <%= form_for :password_reset,
     url: user_password_path(@user, token: @user.confirmation_token),
     html: { method: :put } do |form| %>
-    <div class="form-group">
-      <%= form.label :password, class: 'form-label' %>
+    <div class="form__group">
+      <%= form.label :password, class: 'form__label' %>
       <%= form.password_field :password,
-        class: 'form-input',
+        class: 'form__input',
         autofocus: true,
         placeholder: '••••••••••' %>
     </div>
 
-    <div class="submit-field">
-      <%= form.submit class: ['btn', 'btn-primary'] %>
+    <div class="form__submit">
+      <%= form.submit class: ['button', 'button--primary'] %>
     </div>
   <% end %>
 <% end %>

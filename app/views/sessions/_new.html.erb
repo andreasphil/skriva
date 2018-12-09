@@ -1,0 +1,26 @@
+<% content_for :header do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :navigation do %>
+  <ul class="tabs">
+    <% if Clearance.configuration.allow_sign_up? %>
+      <li class="tabs__item">
+        <%= link_to t('layouts.application.sign_up'), sign_up_path %>
+      </li>
+    <% end %>
+    <li class="tabs__item active">
+      <%= link_to t('layouts.application.sign_in'), sign_in_path %>
+    </li>
+  </ul>
+<% end %>
+
+<% content_for :body do %>
+  <%# <%= render partial: 'shared/notifications' %>
+  <%= render partial: 'sessions/form' %>
+<% end %>
+
+<% content_for :footer do %>
+  <%= link_to t('.forgot_password'), new_password_path %> |
+  <%= link_to t('.cancel'), home_index_path %>
+<% end %>

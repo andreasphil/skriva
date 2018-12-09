@@ -1,0 +1,21 @@
+<div class="panel">
+  <%# Panel headline %>
+  <div class="panel__header">
+    <div class="panel__title"><%= content_for :header %></div>
+  </div>
+
+  <%# Navigation %>
+  <div class="panel__nav">
+    <%= content_for :navigation %>
+  </div>
+
+  <%# Content %>
+  <div class="panel__body">
+    <%= content_for :body %>
+  </div>
+
+  <%# Footer %>
+  <div class="panel__footer">
+    <%= content_for :footer %>
+  </div>
+</div>
