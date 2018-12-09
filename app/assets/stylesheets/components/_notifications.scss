@@ -1,0 +1,37 @@
+/* -------------------------------------------------- *
+ * Notifi                                             *
+ * -------------------------------------------------- */
+
+.notification {
+  border-radius: $border-radius;
+  border: 0;
+  color: $light-color;
+  padding: $baseline-small-x2 $baseline-small-x3;
+  text-align: center;
+
+  & + & {
+    margin-top: $baseline;
+  }
+
+  &__wrapper {
+    @extend .base-container;
+    @include position(fixed, 0, 0, auto, auto);
+    width: 100%;
+    max-width: $baseline * 45;
+  }
+
+  &--success {
+    @include box-shadow-bottom($success-color);
+    @include background-gradient($success-color, $success-color-light, $success-color-dark);
+  }
+
+  &--error {
+    @include box-shadow-bottom($error-color);
+    @include background-gradient($error-color, $error-color-light, $error-color-dark);
+  }
+
+  &--notice {
+    @include box-shadow-bottom($warning-color);
+    @include background-gradient($warning-color, $warning-color-light, $warning-color-dark);
+  }
+}

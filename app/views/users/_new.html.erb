@@ -1,0 +1,30 @@
+<% content_for :header do %>
+  <%= t('.title') %>
+<% end %>
+
+<% content_for :navigation do %>
+  <ul class="tabs">
+    <% if Clearance.configuration.allow_sign_up? %>
+      <li class="tabs__item active">
+        <%= link_to t('layouts.application.sign_up'), sign_up_path %>
+      </li>
+    <% end %>
+    <li class="tabs__item">
+      <%= link_to t('layouts.application.sign_in'), sign_in_path %>
+    </li>
+  </ul>
+<% end %>
+
+<% content_for :body do %>
+  <%= form_for @user do |form| %>
+    <%= render partial: 'users/form', object: form %>
+
+    <div class="form__submit">
+      <%= form.submit class: ['button', 'button--primary'] %>
+    </div>
+  <% end %>
+<% end %>
+
+<% content_for :footer do %>
+  <% link_to t('.cancel'), home_index_path %>
+<% end %>

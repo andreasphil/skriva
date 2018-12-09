@@ -1,0 +1,40 @@
+/* -------------------------------------------------- *
+ * Forms                                              *
+ * -------------------------------------------------- */
+
+.form {
+  &__group {
+    margin-bottom: $baseline-small-x5;
+  }
+
+  &__label {
+    @extend .text--gray;
+    font-size: $font-size-small;
+    display: block;
+    margin: $baseline-small 0;
+  }
+
+  &__input {
+    border-radius: $border-radius;
+    border: 1px solid $border-color;
+    box-sizing: border-box;
+    padding: $baseline-small $baseline-small-x2;
+    transition: box-shadow $transition, border-color $transition;
+    width: 100%;
+
+    &:focus {
+      @include control-shadow($primary-color-light);
+      border-color: $primary-color;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $text-gray-color;
+      opacity: 1;
+    }
+  }
+
+  &__submit {
+    margin: $baseline-small 0;
+  }
+}

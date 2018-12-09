@@ -1,0 +1,7 @@
+<%= render layout: 'layouts/master' do |f| %>
+  <div class="panel__wrapper">
+    <%= render layout: 'layouts/panel' do %>
+      <%= yield %>
+    <% end %>
+  </div>
+<% end %>

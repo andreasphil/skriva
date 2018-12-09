@@ -5,17 +5,17 @@
 <% content_for :body do %>
   <p><%= t(".description") %></p>
   <%= form_for :password, url: passwords_path do |form| %>
-    <div class="form-group">
-      <%= form.label :email, class: 'form-label' %>
+    <div class="form__group">
+      <%= form.label :email, class: 'form__label' %>
       <%= form.text_field :email,
         type: 'email',
-        class: 'form-input',
+        class: 'form__input',
         autofocus: true,
         placeholder: 'joe@example.com' %>
     </div>
 
-    <div class="submit-field">
-      <%= form.submit class: ['btn', 'btn-primary'] %>
+    <div class="form__submit">
+      <%= form.submit class: ['button', 'button--primary'] %>
     </div>
   <% end %>
 <% end %>

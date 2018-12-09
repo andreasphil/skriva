@@ -1,9 +1,11 @@
-// -----------------------------------------------------------------------------
-// Place all the styles related to the notes controller here.
-// -----------------------------------------------------------------------------
+/* -------------------------------------------------- *
+ * Notes controller                                   *
+ * -------------------------------------------------- */
+
+$content-width: 30.0rem;
 
 .note {
-  @extend .content;
+  @extend .base-container;
 }
 
 .note-editor {
@@ -19,9 +21,9 @@
 }
 
 
-// -----------------------------------------------------------------------------
-// MediumEditor toolbar
-// -----------------------------------------------------------------------------
+/* -------------------------------------------------- *
+ * Editor toolbar                                     *
+ * -------------------------------------------------- */
 
 .medium-editor-toolbar {
   @include box-shadow-bottom();
@@ -55,9 +57,9 @@
 }
 
 
-// -----------------------------------------------------------------------------
-// Editor typography styles
-// -----------------------------------------------------------------------------
+/* -------------------------------------------------- *
+ * Editor typography                                  *
+ * -------------------------------------------------- */
 
 .note-editor {
   h1, h2 {
@@ -82,13 +84,13 @@
   }
 
   p {
-    margin-bottom: $unit-5;
+    margin-bottom: $baseline-x2;
     line-height: 1.5;
   }
 
   ol, ul {
     list-style-position: outside;
-    padding-left: $unit-5;
+    padding-left: $baseline-x2;
 
     li {
       line-height: 1.5;
@@ -102,11 +104,11 @@
   }
 
   blockquote {
-    font-size: $font-size-lg;
+    font-size: $font-size-large;
   }
 
   pre {
-    font-size: $font-size-sm;
+    font-size: $font-size-small;
     white-space: pre-wrap;
   }
 }
