@@ -7,21 +7,21 @@
   width: percentage($width / $grid-columns);
 }
 
-.base-container {
+%base-container {
   padding: $grid-gutter;
 }
 
-.grid {
+%grid {
   padding: 0 $grid-gutter;
 
-  &__cols {
+  &-cols {
     display: flex;
     flex-wrap: wrap;
     margin: 0 (-$grid-gutter);
   }
 
-  &__col {
-    @extend .base-container;
+  &-col {
+    @extend %base-container;
     flex: 1 1 0;
 
     @for $i from 1 through $grid-columns {

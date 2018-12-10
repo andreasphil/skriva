@@ -14,30 +14,27 @@
  */
 
 // Variables and mixins
-@import "base/variables";
-@import "base/mixins";
-
-// Fonts
-@import url('https://rsms.me/inter/inter-ui.css');
+@import 'base/variables';
+@import 'base/mixins';
 
 // MediumEditor
-@import "medium-editor/src/sass/medium-editor";
-@import "medium-editor/src/sass/themes/default";
+@import 'medium-editor/src/sass/medium-editor';
+@import 'medium-editor/src/sass/themes/default';
 
 // Base
-@import "base/base";
-@import "base/typography";
-@import "base/layout";
+@import 'base/base';
+@import 'base/typography';
+@import 'base/layout';
 
 // Components
-@import "components/buttons";
-@import "components/forms";
-@import "components/notifications";
-@import "components/panels";
-@import "components/tabs";
-@import "components/turbolinks";
+@import 'components/buttons';
+@import 'components/forms';
+@import 'components/notifications';
+@import 'components/panels';
+@import 'components/tabs';
+@import 'components/turbolinks';
 
 // Controller
-@import "controllers/home";
-@import "controllers/notes";
-@import "controllers/users";
+@import 'controllers/home';
+@import 'controllers/notes';
+@import 'controllers/users';

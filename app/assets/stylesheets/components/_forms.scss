@@ -8,15 +8,15 @@
   }
 
   &__label {
-    @extend .text--gray;
-    font-size: $font-size-small;
+    @extend %text-gray;
     display: block;
+    font-size: $font-size-small;
     margin: $baseline-small 0;
   }
 
   &__input {
-    border-radius: $border-radius;
     border: 1px solid $border-color;
+    border-radius: $border-radius;
     box-sizing: border-box;
     padding: $baseline-small $baseline-small-x2;
     transition: box-shadow $transition, border-color $transition;

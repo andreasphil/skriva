@@ -3,15 +3,20 @@
  * -------------------------------------------------- */
 
 .home {
+  @extend %grid;
   @include position(absolute, 0);
-  @extend .grid;
   align-items: center;
   display: flex;
   margin: auto;
   max-width: $screen-large;
 
-  &__left, &__right {
-    @extend .grid__col;
+  &__content {
+    @extend %grid-cols;
+  }
+
+  &__left,
+  &__right {
+    @extend %grid-col;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -28,9 +33,9 @@
   &__title {
     margin: $baseline-x3 0;
 
-    &:after {
-      animation: blink 0.75s linear infinite alternate;
-      border-right: 0.15rem $primary-color solid;
+    &::after {
+      animation: blink .75s linear infinite alternate;
+      border-right: .15rem $primary-color solid;
       content: '';
     }
   }
@@ -41,9 +46,9 @@
   }
 
   &__footer {
-    @extend .text--gray;
+    @extend %text-gray;
     font-size: $font-size-small;
-    margin: ($baseline-x5 * 2) 0 $baseline-x3 0;
+    margin: ($baseline-x5 * 2) 0 $baseline-x3;
   }
 }
 
@@ -52,7 +57,8 @@
   .home {
     @include position(unset, unset);
 
-    &__left, &__right {
+    &__left,
+    &__right {
       @include make-grid-column(12);
     }
   }

@@ -12,7 +12,8 @@ $h-sizes: (
 );
 
 @for $i from 1 through 6 {
-  h#{$i}, .h#{$i} {
+  h#{$i},
+  %h#{$i} {
     font-size: map-get($h-sizes, $i);
     font-weight: 500;
     text-transform: capitalize;
@@ -22,7 +23,7 @@ $h-sizes: (
 a {
   color: $link-color;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color .2s;
 
   &:hover {
     color: $link-hover-color;
@@ -30,7 +31,7 @@ a {
   }
 }
 
-.text--gray {
+%text-gray {
   color: $text-gray-color;
 
   a {

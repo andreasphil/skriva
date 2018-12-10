@@ -3,18 +3,18 @@
  * -------------------------------------------------- */
 
 .panel {
-  @include box-shadow-bottom();
+  @include box-shadow-bottom;
   background-color: $light-color;
-  border-radius: $border-radius;
   border: 1px solid $border-color-light;
+  border-radius: $border-radius;
   padding: 0;
   width: 100%;
 
   &__wrapper {
-    @extend .base-container;
+    @extend %base-container;
     @include position(absolute, 0);
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
 
     .panel {
@@ -23,8 +23,10 @@
     }
   }
 
-  &__header, &__body, &__footer {
-    @extend .base-container;
+  &__header,
+  &__body,
+  &__footer {
+    @extend %base-container;
   }
 
   &__header {
@@ -33,12 +35,12 @@
   }
 
   &__title {
-    @extend .h6;
+    @extend %h6;
     margin: 0;
   }
 
   &__footer {
-    @extend .text--gray;
+    @extend %text-gray;
     border-top: 1px solid $border-color-light;
     font-size: $font-size-small;
     text-align: center;
@@ -50,8 +52,8 @@
 
   .notification__wrapper {
     @include position(unset, unset);
-    padding: 0;
     margin-bottom: $baseline-x3;
+    padding: 0;
   }
 
   p {
@@ -67,7 +69,6 @@
   .button {
     width: 100%;
   }
-
 }
 
 @media (max-width: $screen-small) {
