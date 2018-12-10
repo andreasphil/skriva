@@ -2,67 +2,21 @@
  * Notes controller                                   *
  * -------------------------------------------------- */
 
-$content-width: 30.0rem;
+$content-width: 30rem;
 
 .note {
-  @extend .base-container;
+  @extend %base-container;
 }
 
 .note-editor {
-  min-height: 15.0rem;
+  min-height: 15rem;
 
   &:focus {
     outline: none;
   }
-}
 
-.note-statusBtn {
-  min-width: 7.5rem;
-}
-
-
-/* -------------------------------------------------- *
- * Editor toolbar                                     *
- * -------------------------------------------------- */
-
-.medium-editor-toolbar {
-  @include box-shadow-bottom();
-
-  &, & li button {
-    background: $dark-color;
-    border: none;
-  }
-
-  & li button {
-    box-shadow: none;
-    color: $light-color;
-
-    &:hover {
-      background: lighten($dark-color, 10%);
-      color: $light-color;
-    }
-
-    &.medium-editor-button-active {
-      background: darken($dark-color, 5%);
-    }
-
-    &.medium-editor-action-pre {
-      font-size: inherit;
-    }
-  }
-}
-
-.medium-toolbar-arrow-under:after {
-  border-top-color: $dark-color;
-}
-
-
-/* -------------------------------------------------- *
- * Editor typography                                  *
- * -------------------------------------------------- */
-
-.note-editor {
-  h1, h2 {
+  h1,
+  h2 {
     font-weight: 500;
   }
 
@@ -84,11 +38,12 @@ $content-width: 30.0rem;
   }
 
   p {
-    margin-bottom: $baseline-x2;
     line-height: 1.5;
+    margin-bottom: $baseline-x2;
   }
 
-  ol, ul {
+  ol,
+  ul {
     list-style-position: outside;
     padding-left: $baseline-x2;
 
@@ -97,7 +52,8 @@ $content-width: 30.0rem;
       margin-top: 0;
     }
 
-    & > ol, ul {
+    & > ol,
+    & > ul {
       margin-bottom: 0;
       margin-top: 0;
     }
@@ -110,5 +66,48 @@ $content-width: 30.0rem;
   pre {
     font-size: $font-size-small;
     white-space: pre-wrap;
+  }
+}
+
+.note-status-btn {
+  min-width: 7.5rem;
+}
+
+/* -------------------------------------------------- *
+ * Editor toolbar                                     *
+ * -------------------------------------------------- */
+
+.medium-editor-toolbar {
+  // sass-lint:disable-block force-element-nesting
+  @include box-shadow-bottom;
+
+  &,
+  & li button {
+    background: $dark-color;
+    border: 0;
+  }
+
+  & li button {
+    box-shadow: none;
+    color: $light-color;
+
+    &:hover {
+      background: lighten($dark-color, 10%);
+      color: $light-color;
+    }
+
+    &.medium-editor-button-active {
+      background: darken($dark-color, 5%);
+    }
+
+    &.medium-editor-action-pre {
+      font-size: inherit;
+    }
+  }
+}
+
+.medium-toolbar-arrow-under {
+  &::after {
+    border-top-color: $dark-color;
   }
 }

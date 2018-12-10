@@ -1,0 +1,12 @@
+{
+  "options": {
+    "merge-default-rules": true
+  },
+  "rules": {
+    "class-name-format": [1, {
+        "convention": "hyphenatedbem"
+      }
+    ],
+    "no-css-comments": 0
+  }
+}

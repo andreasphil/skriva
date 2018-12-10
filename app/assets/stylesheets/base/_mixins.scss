@@ -3,22 +3,22 @@
  * -------------------------------------------------- */
 
 @mixin background-gradient($bg, $bg-light, $bg-dark) {
-  background-color: $bg;
   background: linear-gradient(135deg, $bg-light, $bg-dark);
+  background-color: $bg;
 }
 
-@mixin box-shadow-bottom($color: $box-shadow-color, $depth-modifier: 0rem) {
-  box-shadow: 0 0.2rem (0.5rem + $depth-modifier) -0.2rem $color;
+@mixin box-shadow-bottom($color: $box-shadow-color, $depth-modifier: 0) {
+  box-shadow: 0 .2rem (.5rem + $depth-modifier) -.2rem $color;
 }
 
 @mixin control-shadow ($color) {
-  box-shadow: 0 0 0 0.1rem rgba($color, 0.2);
+  box-shadow: 0 0 0 .1rem rgba($color, .2); // sass-lint:disable-line no-color-literals
 }
 
 @mixin position($position, $top, $right: $top, $bottom: $top, $left: $right) {
-  position: $position;
-  top: $top;
-  right: $right;
   bottom: $bottom;
   left: $left;
+  position: $position;
+  right: $right;
+  top: $top;
 }

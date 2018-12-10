@@ -7,19 +7,20 @@
   @include box-shadow-bottom($bg);
   color: $text;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     @include background-gradient($bg, $bg-light, $bg-dark);
-    @include box-shadow-bottom($bg, 0.3rem);
+    @include box-shadow-bottom($bg, .3rem);
     color: $text;
   }
 }
 
 .button {
   background-color: $button-default-background;
+  border: 0;
   border-radius: $border-radius;
-  border: none;
-  cursor: pointer;
   color: $body-color;
+  cursor: pointer;
   padding: $baseline-small-x2 $baseline-small-x3;
   text-align: center;
   transition: background-color $transition, box-shadow $transition, color $transition;
@@ -52,8 +53,4 @@
     background-color: transparent;
     box-shadow: none;
   }
-}
-
-a.button {
-  display: inline-block;
 }
