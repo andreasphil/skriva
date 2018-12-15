@@ -6,6 +6,10 @@ $navbar-height: $increment;
 $navbar-line-height: $font-size-large;
 $navbar-vertical-padding: (($navbar-height - $navbar-line-height) / 2);
 
+@mixin navbar-padding-top($modifier: 0) {
+  padding-top: ($navbar-height + $modifier);
+}
+
 .navbar {
   @include box-shadow-bottom;
   @include position(fixed, 0, 0, auto);
