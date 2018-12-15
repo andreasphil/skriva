@@ -1,21 +1,29 @@
 <div class="panel">
   <%# Panel headline %>
-  <div class="panel__header">
-    <div class="panel__title"><%= content_for :header %></div>
-  </div>
+  <% if content_for?(:header) %>
+    <div class="panel__header">
+      <div class="panel__title"><%= content_for :header %></div>
+    </div>
+  <% end %>
 
   <%# Navigation %>
-  <div class="panel__nav">
-    <%= content_for :navigation %>
-  </div>
+  <% if content_for?(:navigation) %>
+    <div class="panel__nav">
+      <%= content_for :navigation %>
+    </div>
+  <% end %>
 
   <%# Content %>
-  <div class="panel__body">
-    <%= content_for :body %>
-  </div>
+  <% if content_for?(:body) %>
+    <div class="panel__body">
+      <%= content_for :body %>
+    </div>
+  <% end %>
 
   <%# Footer %>
-  <div class="panel__footer">
-    <%= content_for :footer %>
-  </div>
+  <% if content_for?(:footer) %>
+    <div class="panel__footer">
+      <%= content_for :footer %>
+    </div>
+  <% end %>
 </div>
