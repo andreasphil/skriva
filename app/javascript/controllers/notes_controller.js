@@ -59,15 +59,15 @@ export default class extends Controller {
   /* Helpers --------------------------------------------------------------- */
 
   setSaveButtonState (state) {
-    const allClasses = ['btn-primary', 'disabled', 'loading', 'btn-error']
+    const allClasses = ['button--primary', 'disabled', 'loading', 'button--error']
 
     const states = {
       unsavedChanges: {
-        classes: ['btn-primary'],
+        classes: ['button--primary'],
         message: this.polyglot.t('notes.edit.save')
       },
       saving: {
-        classes: ['btn-primary', 'loading'],
+        classes: ['button--primary', 'loading'],
         message: this.polyglot.t('notes.edit.saving')
       },
       saved: {
@@ -75,7 +75,7 @@ export default class extends Controller {
         message: this.polyglot.t('notes.edit.saved')
       },
       error: {
-        classes: ['btn-error'],
+        classes: ['button--error'],
         message: this.polyglot.t('notes.edit.saving_error')
       }
     }

@@ -2,55 +2,126 @@
  * Notes controller                                   *
  * -------------------------------------------------- */
 
-$content-width: 30rem;
+.notes {
+  @extend %grid;
+  @include position(absolute, 0);
 
-.note {
-  @extend %base-container;
+  &-content {
+    @extend %grid-cols;
+    min-height: 100%;
+  }
+
+  &-sidebar,
+  &-editor {
+    @extend %grid-col;
+  }
+
+  &-sidebar {
+    @include make-grid-col(3);
+    padding-top: ($baseline-x5 * 4);
+
+    &__sticky-wrapper {
+      padding-top: $baseline-x2;
+      position: sticky;
+      top: 0;
+    }
+
+    .button {
+      width: 100%;
+    }
+  }
+
+  &-editor {
+    @include make-grid-col(9);
+    background-color: $light-color;
+    padding-bottom: ($baseline-x5 * 4);
+    padding-top: ($baseline-x5 * 4);
+  }
 }
 
-.note-editor {
+@media (max-width: $screen-small) {
+  .notes {
+    &-sidebar,
+    &-editor {
+      @include make-grid-col(12);
+    }
+
+    &-sidebar {
+      padding-top: 0;
+    }
+
+    &-editor {
+      padding-top: $baseline-x2;
+    }
+  }
+}
+
+.note {
+  margin: auto;
+  max-width: $screen-medium;
   min-height: 15rem;
+  width: 100%;
 
   &:focus {
     outline: none;
   }
 
+  &__shadow-form {
+    display: none;
+  }
+
+  &__status-button {
+    min-width: 7.5rem;
+  }
+
+  *:first-child {
+    margin-top: $baseline-x3;
+  }
+
   h1,
   h2 {
     font-weight: 500;
+    margin-bottom: .5em;
   }
 
   h1 {
     font-size: 1.7rem;
+    margin-top: 1em;
+
+    &:first-child {
+      margin-top: $baseline-small-x3;
+    }
   }
 
   h2 {
     font-size: 1.2rem;
+    margin-top: 1em;
+
+    &:first-child {
+      margin-top: $baseline-small-x5;
+    }
   }
 
   a {
-    color: $primary-color-light;
+    color: $primary-color;
 
     &:hover {
-      color: $primary-color;
+      color: $primary-color-dark;
       text-decoration: none;
     }
   }
 
-  p {
-    line-height: 1.5;
-    margin-bottom: $baseline-x2;
+  p,
+  ol,
+  ul {
+    margin-bottom: 1em;
+    margin-top: 1em;
   }
 
   ol,
   ul {
     list-style-position: outside;
-    padding-left: $baseline-x2;
-
-    li {
-      line-height: 1.5;
-      margin-top: 0;
-    }
+    padding-left: 2em;
 
     & > ol,
     & > ul {
@@ -60,17 +131,29 @@ $content-width: 30rem;
   }
 
   blockquote {
+    border-left: .15rem solid $primary-color;
     font-size: $font-size-large;
+    margin: 1em 0;
+    padding: $baseline $baseline-x3;
+
+    &:first-child {
+      margin-top: $baseline-x2;
+    }
   }
 
   pre {
+    border: 1px solid $border-color-light;
+    border-radius: $border-radius;
     font-size: $font-size-small;
+    margin-bottom: .5em;
+    margin-top: 1em;
+    padding: $baseline-small-x2 $baseline-small-x4;
     white-space: pre-wrap;
-  }
-}
 
-.note-status-btn {
-  min-width: 7.5rem;
+    &:first-child {
+      margin-top: $baseline-x2;
+    }
+  }
 }
 
 /* -------------------------------------------------- *
