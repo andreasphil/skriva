@@ -32,6 +32,19 @@
       color: $text-gray-color;
       opacity: 1;
     }
+
+    &--error {
+      @include control-shadow($error-color-light);
+      border-color: $error-color;
+    }
+
+    &--success {
+      &,
+      &:focus {
+        @include control-shadow($success-color-light);
+        border-color: $success-color;
+      }
+    }
   }
 
   &__submit {
