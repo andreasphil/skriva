@@ -23,7 +23,7 @@
   cursor: pointer;
   padding: $baseline-small-x2 $baseline-small-x3;
   text-align: center;
-  transition: background-color $transition, box-shadow $transition, color $transition;
+  transition: background-color $transition, box-shadow $transition, color $transition, opacity $transition;
 
   &:hover {
     background-color: $button-default-hover-background;
@@ -31,8 +31,13 @@
     text-decoration: none;
   }
 
+  &:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+  }
+
   & + & {
-    margin-left: $baseline-x2;
+    margin-left: $grid-gutter;
   }
 
   &--primary {

@@ -5,8 +5,6 @@ export default class extends Controller {
     return ['passwordField', 'passwordConfirmationField', 'submitButton']
   }
 
-  /* Events ---------------------------------------------------------------- */
-
   onPasswordInput (e) {
     const passwordField = this.passwordFieldTarget
     const passwordConfirmationField = this.passwordConfirmationFieldTarget
@@ -29,15 +27,13 @@ export default class extends Controller {
     }
   }
 
-  /* Helpers --------------------------------------------------------------- */
-
   setPasswordFieldsState (state) {
-    const allClasses = ['is-error', 'is-success']
+    const allClasses = ['form__input--error', 'form__input--success']
 
     const states = {
       default: undefined,
-      error: 'is-error',
-      success: 'is-success'
+      error: 'form__input--error',
+      success: 'form__input--success'
     }
 
     this.passwordConfirmationFieldTarget.classList.remove(...allClasses)
