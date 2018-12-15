@@ -23,11 +23,11 @@
   }
 
   &__left {
-    @include make-grid-column(7);
+    @include make-grid-col(7);
   }
 
   &__right {
-    @include make-grid-column(5);
+    @include make-grid-col(5);
   }
 
   &__title {
@@ -59,7 +59,7 @@
 
     &__left,
     &__right {
-      @include make-grid-column(12);
+      @include make-grid-col(12);
     }
   }
 }

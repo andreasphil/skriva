@@ -2,7 +2,7 @@
  * Layout                                             *
  * -------------------------------------------------- */
 
-@mixin make-grid-column($width) {
+@mixin make-grid-col($width) {
   flex-basis: auto;
   width: percentage($width / $grid-columns);
 }
@@ -26,7 +26,7 @@
 
     @for $i from 1 through $grid-columns {
       &--#{$i} {
-        @include make-grid-column($i);
+        @include make-grid-col($i);
       }
     }
   }

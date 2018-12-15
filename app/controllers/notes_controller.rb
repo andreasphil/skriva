@@ -4,7 +4,6 @@
 class NotesController < ApplicationController
   before_action :require_login
   before_action :set_note
-  before_action :set_page_controller
   before_action :set_client_locales
   layout 'application'
 
@@ -25,11 +24,6 @@ class NotesController < ApplicationController
   end
 
   private
-
-  # Set page-wide JS controller
-  def set_page_controller
-    @page_controller = 'notes'
-  end
 
   # Load note model into context
   def set_note
