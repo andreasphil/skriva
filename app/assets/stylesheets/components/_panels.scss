@@ -46,8 +46,13 @@
     text-align: center;
   }
 
-  .tab {
-    border-bottom-color: $border-color-light;
+  .navbar--inline {
+    background-color: $inline-navbar-background-color;
+    border-bottom: 1px solid $border-color-light;
+
+    .navbar__link {
+      flex: 1 1 0;
+    }
   }
 
   .notification__wrapper {
@@ -74,5 +79,6 @@
 @media (max-width: $screen-small) {
   .panel__wrapper {
     @include position(unset, unset);
+    margin-top: $increment;
   }
 }

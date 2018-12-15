@@ -5,9 +5,6 @@ en:
       title: Super-simple note taking.
       description: Skriva is a place to jot down your thoughts and access them through every browser. No files and folders—just a text file that syncs.
       credits_html: 'Made with &hearts; by %{author}. Skriva is published on %{repository}, and provided under the %{license}.'
-  layouts:
-    master:
-      edit: Write
   notes:
     edit:
       save: Save
@@ -15,3 +12,6 @@ en:
       saving_error: Try again
       saving: Saving
       title: Write
+  shared:
+    navbar:
+      edit: Write

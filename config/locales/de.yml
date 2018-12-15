@@ -5,9 +5,6 @@ de:
       title: Super-einfache Notizen.
       description: 'Skriva bietet dir einen Ort, um deine Gedanken festzuhalten und über jeden Browser zu erreichen. Keine Dateien oder Ordner—nur ein Textdokument, das synchronisiert wird.'
       credits_html: 'Mit &hearts; entwickelt von %{author}. Skriva findet sich auch auf %{repository} und wird unter der %{license} bereitgestellt.'
-  layouts:
-    master:
-      edit: Schreiben
   notes:
     edit:
       save: Speichern
@@ -15,3 +12,6 @@ de:
       saving_error: Erneut versuchen
       saving: Speichere
       title: Schreiben
+  shared:
+    navbar:
+      edit: Schreiben

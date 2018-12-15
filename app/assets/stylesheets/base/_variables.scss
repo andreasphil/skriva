@@ -15,6 +15,8 @@ $baseline-small-x3: $baseline-small * 3;
 $baseline-small-x4: $baseline-small * 4;
 $baseline-small-x5: $baseline-small * 5;
 
+$increment: ($baseline * 8);
+
 $screen-small: 576px;
 $screen-medium: 768px;
 $screen-large: 992px;
@@ -65,7 +67,7 @@ $button-default-background: $light-color-2;
 $button-default-hover-background: darken($button-default-background, 5%);
 $link-color: $dark-color;
 $link-hover-color: lighten($link-color, 20%);
-$tab-background-color: lighten($light-color-2, 1.5%);
+$inline-navbar-background-color: lighten($light-color-2, 1.5%);
 $text-gray-color: lighten($body-color, 40%);
 $text-gray-link-color: lighten($body-color, 30%);
 $text-gray-link-hover-color: lighten($body-color, 20%);

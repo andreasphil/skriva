@@ -3,16 +3,16 @@
 <% end %>
 
 <% content_for :navigation do %>
-  <ul class="tabs">
+  <nav class="navbar navbar--inline">
     <% if Clearance.configuration.allow_sign_up? %>
-      <li class="tabs__item active">
-        <%= link_to t('layouts.application.sign_up'), sign_up_path %>
-      </li>
+      <%= link_to t('shared.navbar.sign_up'),
+        sign_up_path,
+        class: ['navbar__link', 'active'] %>
     <% end %>
-    <li class="tabs__item">
-      <%= link_to t('layouts.application.sign_in'), sign_in_path %>
-    </li>
-  </ul>
+      <%= link_to t('shared.navbar.sign_in'),
+        sign_in_path,
+        class: 'navbar__link' %>
+  </nav>
 <% end %>
 
 <% content_for :body do %>
