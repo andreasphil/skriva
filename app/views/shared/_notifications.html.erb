@@ -1,5 +1,11 @@
-<div class="notification__wrapper">
-  <% flash.each do |key, value| %>
-  <div class="notification notification--<%= key %>"><%= value %></div>
-  <% end %>
-</div>
+<% unless flash.empty? %>
+  <div class="notification__wrapper"
+    data-stimulus-controller="notifications">
+    <% flash.each do |key, value| %>
+      <div class="notification notification--<%= key %>"
+        data-stimulus-action="click->notifications#close">
+        <%= value %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

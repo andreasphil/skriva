@@ -6,6 +6,9 @@
   border: 0;
   border-radius: $border-radius;
   color: $light-color;
+  cursor: pointer;
+  margin: $grid-gutter;
+  margin-bottom: 0;
   padding: $baseline-small-x2 $baseline-small-x3;
   text-align: center;
 
@@ -14,10 +17,14 @@
   }
 
   &__wrapper {
-    @extend %base-container;
     @include position(fixed, 0, 0, auto, auto);
     max-width: $baseline * 45;
     width: 100%;
+    z-index: 1000;
+
+    &--inline {
+      @include position(unset, unset);
+    }
   }
 
   &--success {
