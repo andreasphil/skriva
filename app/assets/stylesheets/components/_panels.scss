@@ -12,13 +12,10 @@
 
   &__wrapper {
     @extend %base-container;
-    @include position(absolute, 0);
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    @include navbar-padding-top($increment * 2);
 
     .panel {
-      flex: 1 1 auto;
+      margin: auto;
       max-width: $baseline * 45;
     }
   }
@@ -78,7 +75,6 @@
 
 @media (max-width: $screen-small) {
   .panel__wrapper {
-    @include position(unset, unset);
-    margin-top: $increment;
+    @include navbar-padding-top($grid-gutter);
   }
 }
