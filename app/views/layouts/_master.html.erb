@@ -13,45 +13,13 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <% if @client_locales %>
-    <script>
-      window.locales = <%= raw @client_locales.to_json %>
-    </script>
+      <script>
+        window.locales = <%= raw @client_locales.to_json %>
+      </script>
     <% end %>
   </head>
 
   <body>
-
-    <%# Global navigation %>
-    <!-- <header id="header" class="navbar">
-      <section class="navbar-section">
-        <%= link_to t('name'), home_index_path, class: ['navbar-brand'] %>
-        <% if signed_in? %>
-          <%= navbar_link_to t('.edit'),
-            edit_note_path,
-            class: ['btn', 'btn-link'] %>
-          <%= navbar_link_to current_user.email,
-            edit_user_path,
-            class: ['btn', 'btn-link'] %>
-          <%= button_to t('layouts.application.sign_out'),
-            sign_out_path,
-            method: :delete, class: ['btn', 'btn-link'] %>
-        <% else %>
-          <% if Clearance.configuration.allow_sign_up? %>
-            <%= navbar_link_to t('layouts.application.sign_up'),
-              sign_up_path,
-              class: ['btn', 'btn-link'] %>
-          <% end %>
-          <%= navbar_link_to t('layouts.application.sign_in'),
-            sign_in_path,
-            class: ['btn', 'btn-link'] %>
-        <% end %>
-      </section>
-
-      <section class="navbar-section">
-        <%= yield :toolbar %>
-      </section>
-    </header>-->
-
     <%# Flash messages %>
     <% unless @template_renders_notifications %>
       <%= render partial: 'shared/notifications' %>

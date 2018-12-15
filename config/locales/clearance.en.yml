@@ -36,11 +36,6 @@ en:
       user:
         create: Create account
         update: Update
-  layouts:
-    application:
-      sign_up: Create account
-      sign_in: Sign in
-      sign_out: Sign out
   passwords:
     create:
       description: You will receive an email with instructions for changing your password within the next few minutes.
@@ -56,15 +51,19 @@ en:
       title: Change your password
   sessions:
     new:
-      cancel: Homepage
       forgot_password: Forgot your password?
       title: Welcome back!
+  shared:
+    navbar:
+      sign_up: Create account
+      sign_in: Sign in
+      sign_out: Sign out
   users:
     new:
       cancel: Cancel
       title: Hello!
     edit:
-      cancel: Cancel
+      cancel: Back
       title: Account
     update:
       error: Something went wrong when saving your changes.

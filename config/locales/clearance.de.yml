@@ -36,11 +36,6 @@ de:
       user:
         create: Registrieren
         update: Aktualisieren
-  layouts:
-    application:
-      sign_up: Registrieren
-      sign_in: Anmelden
-      sign_out: Abmelden
   passwords:
     create:
       description: Innerhalb der nächsten Minuten wirst du eine E-Mail mit Anweisungen zum Ändern deines Kennworts erhalten.
@@ -56,15 +51,19 @@ de:
       title: Kennwort ändern
   sessions:
     new:
-      cancel: Homepage
       forgot_password: Kennwort vergessen?
       title: Wilkommen zurück!
+  shared:
+    navbar:
+      sign_up: Registrieren
+      sign_in: Anmelden
+      sign_out: Abmelden
   users:
     new:
       cancel: Abbrechen
       title: Hallo!
     edit:
-      cancel: Abbrechen
+      cancel: Zurück
       title: Konto
     update:
       error: Änderungen konnten nicht gespeichert werden.

@@ -1,0 +1,73 @@
+/* -------------------------------------------------- *
+ * Navbar                                             *
+ * -------------------------------------------------- */
+
+$navbar-height: $increment;
+$navbar-line-height: $font-size-large;
+$navbar-vertical-padding: (($navbar-height - $navbar-line-height) / 2);
+
+.navbar {
+  @include box-shadow-bottom;
+  @include position(fixed, 0, 0, auto);
+  background-color: $light-color;
+  display: flex;
+  z-index: 10;
+
+  &--inline {
+    @include position(unset, unset);
+    box-shadow: none;
+  }
+
+  &__section {
+    @extend %base-container;
+    flex: 1 1 0;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    &--right {
+      text-align: right;
+    }
+
+    * {
+      display: inline-block;
+    }
+  }
+
+  &__brand,
+  &__link {
+    background-color: transparent;
+    border: 0;
+    color: $link-color;
+    line-height: ($font-size-large);
+    padding: $navbar-vertical-padding 0;
+    transition: color $transition;
+
+    &:hover {
+      color: $link-hover-color;
+      text-decoration: none;
+    }
+  }
+
+  &__brand {
+    font-size: $font-size-large;
+  }
+
+  &__link {
+    border-bottom: .15rem solid transparent;
+    font-size: $font-size-small;
+    padding-bottom: ($navbar-vertical-padding - .15rem);
+    padding-left: $baseline-x2;
+    padding-right: $baseline-x2;
+    text-align: center;
+
+    &.active {
+      border-bottom-color: $primary-color;
+    }
+  }
+
+  input {
+    &.navbar__link {
+      cursor: pointer;
+    }
+  }
+}
