@@ -47,12 +47,12 @@
   h1 {
     font-size: 1.7rem;
     margin-top: 1em;
-    }
+  }
 
   h2 {
     font-size: 1.2rem;
     margin-top: 1em;
-    }
+  }
 
   a {
     color: $primary-color;
@@ -136,5 +136,12 @@
 .medium-toolbar-arrow-under {
   &::after {
     border-top-color: $dark-color;
+  }
+}
+
+.medium-editor-placeholder {
+  &::after {
+    color: $text-gray-color;
+    font-style: normal;
   }
 }
