@@ -1,18 +1,9 @@
 <%= render partial: 'shared/navbar' %>
 
 <div class="notes" data-stimulus-controller="notes">
-  <div class="notes__sidebar__sticky-wrapper" style="display: none;">
-    <%= button_tag t('.saved'),
-      class: ['button', 'note__status-button', 'disabled'],
-      data: {
-        stimulus_action: 'click->notes#save',
-        stimulus_target: 'notes.saveButton'
-      } %>
-  </div>
-
   <div class="notes__editor">
     <div class="note"
-      data-stimulus-action="input->notes#onNoteInput"
+      data-stimulus-action="input->notes#onChanged"
       data-stimulus-target="notes.note">
 
       <%# TODO: Use HTML sanitizer instead for security reasons %>

@@ -4,12 +4,10 @@ import { default as MediumEditor } from 'medium-editor'
 
 export default class extends Controller {
   static get targets () {
-    return ['note', 'saveButton', 'input', 'submitButton']
+    return ['note', 'input', 'submitButton']
   }
 
-  /* Hooks ----------------------------------------------------------------- */
-
-  connect () {
+  initialize () {
     this.polyglot = new Polyglot({ phrases: window.locales })
     this.editor = new MediumEditor(this.noteTarget, {
       toolbar: {
@@ -24,9 +22,66 @@ export default class extends Controller {
     })
   }
 
-  /* Events ---------------------------------------------------------------- */
+  connect () {
+    this.isDirty = false
+    this.isSaving = false
+    this.scheduleRegularSave()
+  }
+
+  disconnect () {
+    this.save()
+    this.clearSchedule()
+  }
+
+  onChanged (e) {
+    this.isDirty = true
+    this.scheduleSaveAfterInput()
+  }
+
+  onSend (e) {
+    this.isSaving = true
+  }
+
+  onSuccess (e) {
+    this.isSaving = false
+    this.isDirty = false
+  }
+
+  onError (e) {
+    this.isSaving = false
+    this.isDirty = true
+  }
+
+  scheduleSaveAfterInput () {
+    const debouncePeriod = 500
+    clearTimeout(this.inputSaveTimer)
+
+    this.inputSaveTimer = setInterval(() => {
+      this.save()
+      clearTimeout(this.inputSaveTimer)
+    }, debouncePeriod)
+  }
+
+  scheduleRegularSave () {
+    const regularSavePeriod = 5000
+    clearInterval(this.regularSaveTimer)
+
+    this.regularSaveTimer = setInterval(() => {
+      this.save()
+    }, regularSavePeriod)
+  }
+
+  clearSchedule () {
+    clearInterval(this.inputSaveTimer)
+    clearInterval(this.regularSaveTimer)
+  }
 
   save () {
+    // Cancel if the note hasn't changed or we're still waiting for another request to complete
+    if (!this.isDirty || this.isSaving) {
+      return
+    }
+
     const noteContent = this.noteTarget.innerHTML
     const shadowNoteInput = this.inputTarget
     const shadowSubmitButton = this.submitButtonTarget
@@ -34,56 +89,5 @@ export default class extends Controller {
     // Copy content from contenteditable field to form and submit
     shadowNoteInput.value = noteContent
     shadowSubmitButton.click()
-  }
-
-  onNoteInput (e) {
-    // Activate the button to save the note when it has changed
-    this.setSaveButtonState('unsavedChanges')
-  }
-
-  onSend (e) {
-    // Indicate that the note is being saved
-    this.setSaveButtonState('saving')
-  }
-
-  onSuccess (e) {
-    // Indicate thet the note was saved successfully
-    this.setSaveButtonState('saved')
-  }
-
-  onError (e) {
-    // Indicate that the saving failed
-    this.setSaveButtonState('error')
-  }
-
-  /* Helpers --------------------------------------------------------------- */
-
-  setSaveButtonState (state) {
-    const allClasses = ['button--primary', 'disabled', 'loading', 'button--error']
-
-    const states = {
-      unsavedChanges: {
-        classes: ['button--primary'],
-        message: this.polyglot.t('notes.edit.save')
-      },
-      saving: {
-        classes: ['button--primary', 'loading'],
-        message: this.polyglot.t('notes.edit.saving')
-      },
-      saved: {
-        classes: ['disabled'],
-        message: this.polyglot.t('notes.edit.saved')
-      },
-      error: {
-        classes: ['button--error'],
-        message: this.polyglot.t('notes.edit.saving_error')
-      }
-    }
-
-    // Reset button state and apply new state classes
-    const saveButton = this.saveButtonTarget
-    saveButton.classList.remove(...allClasses)
-    saveButton.classList.add(...states[state].classes)
-    saveButton.innerHTML = states[state].message
   }
 }
