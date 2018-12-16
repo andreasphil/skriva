@@ -2,8 +2,7 @@
 
 # User controller
 class UsersController < ApplicationController
-  before_action :require_login
-  before_action :set_user
+  before_action :require_login, :set_user, :set_render_notifications
   before_action :validate_password_confirmation, only: :update
   layout 'fullscreen_panel'
 
@@ -33,6 +32,11 @@ class UsersController < ApplicationController
   # Load user model into context
   def set_user
     @user = current_user
+  end
+
+  # Render notifications locally
+  def set_render_notifications
+    @template_renders_notifications = true
   end
 
   # Make sure that password and confirmation match
