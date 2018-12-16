@@ -9,14 +9,14 @@ Rails.application.routes.draw do
 
   resources :users, controller: 'clearance/users', only: [:create] do
     resource :password,
-             controller: 'passwords',
+             controller: 'clearance/passwords',
              only: %i[create edit update]
   end
 
   get '/sign_up', to: 'clearance/users#new', as: 'sign_up'
 
   # Password reset
-  resources :passwords, controller: 'passwords', only: %i[create new]
+  resources :passwords, controller: 'clearance/passwords', only: %i[create new]
 
   # Session
   resource :session, controller: 'sessions', only: [:create]
