@@ -2,7 +2,7 @@
 
 # Sessions controller
 class SessionsController < Clearance::SessionsController
-  before_action :set_render_notifications, only: :create
+  before_action :set_render_notifications, only: %i[new create]
 
   private
 
