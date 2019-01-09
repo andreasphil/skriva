@@ -3,15 +3,13 @@
  * -------------------------------------------------- */
 
 .home {
-  @extend %grid;
-  @include position(absolute, 0);
-  align-items: center;
-  display: flex;
+  @extend %grid-cols;
   margin: auto;
   max-width: $screen-large;
 
-  &__content {
-    @extend %grid-cols;
+  &__wrapper {
+    @extend %grid;
+    padding-top: $increment * 3;
   }
 
   &__left,
@@ -55,11 +53,19 @@
 // Media queries
 @media (max-width: $screen-medium) {
   .home {
-    @include position(unset, unset);
-
     &__left,
     &__right {
       @include make-grid-col(12);
+    }
+  }
+}
+
+@media (max-width: $screen-large) {
+  .home {
+    margin: 0 (-$grid-gutter);
+
+    &__wrapper {
+      padding-top: 0;
     }
   }
 }
