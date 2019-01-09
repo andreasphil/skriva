@@ -54,6 +54,7 @@ $navbar-vertical-padding: (($navbar-height - $navbar-line-height) / 2);
 
   &__brand {
     font-size: $font-size-large;
+    font-weight: 500;
   }
 
   &__link {
