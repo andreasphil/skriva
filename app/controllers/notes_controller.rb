@@ -33,10 +33,10 @@ class NotesController < ApplicationController
   # Pass some i18n phrases to the client to be used in JavaScript
   def set_client_locales
     @client_locales = {
-      'notes.edit.save' => t('.save'),
       'notes.edit.saved' => t('.saved'),
       'notes.edit.saving_error' => t('.saving_error'),
-      'notes.edit.saving' => t('.saving')
+      'notes.edit.saving' => t('.saving'),
+      'notes.edit.unsaved_changes' => t('.unsaved_changes')
     }
   end
 

@@ -7,11 +7,11 @@ de:
       credits_html: 'Mit &hearts; entwickelt von %{author}. Skriva findet sich auch auf %{repository} und wird unter der %{license} bereitgestellt.'
   notes:
     edit:
-      save: Speichern
-      saved: Gespeichert
-      saving_error: Erneut versuchen
-      saving: Speichere
+      saved: Gespeichert.
+      saving_error: Fehler beim Speichern!
+      saving: Speichern ...
       title: Schreiben
+      unsaved_changes: Ungespeicherte Änderungen
   shared:
     navbar:
       edit: Schreiben
