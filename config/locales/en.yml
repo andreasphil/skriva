@@ -7,11 +7,11 @@ en:
       credits_html: 'Made with &hearts; by %{author}. Skriva is published on %{repository}, and provided under the %{license}.'
   notes:
     edit:
-      save: Save
-      saved: Saved
-      saving_error: Try again
-      saving: Saving
+      saved: Saved.
+      saving_error: Error saving changes!
+      saving: Saving ...
       title: Write
+      unsaved_changes: Unsaved changes
   shared:
     navbar:
       edit: Write
