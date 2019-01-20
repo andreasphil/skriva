@@ -17,10 +17,9 @@ $baseline-small-x5: $baseline-small * 5;
 
 $increment: ($baseline * 8);
 
-$screen-small: 576px;
-$screen-medium: 768px;
-$screen-large: 992px;
-$screen-xlarge: 1200px;
+$screen-small: 768px;
+$screen-medium: 1024px;
+$screen-large: 1440px;
 
 $grid-columns: 12;
 $grid-gutter: $baseline-x2;
