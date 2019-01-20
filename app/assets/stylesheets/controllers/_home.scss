@@ -5,7 +5,7 @@
 .home {
   @extend %grid-cols;
   margin: auto;
-  max-width: $screen-large;
+  max-width: $screen-medium;
 
   &__wrapper {
     @extend %grid;
@@ -51,7 +51,7 @@
 }
 
 // Media queries
-@media (max-width: $screen-medium) {
+@media (max-width: $screen-small) {
   .home {
     &__left,
     &__right {
@@ -60,7 +60,7 @@
   }
 }
 
-@media (max-width: $screen-large) {
+@media (max-width: $screen-small) {
   .home {
     margin: 0 (-$grid-gutter);
 

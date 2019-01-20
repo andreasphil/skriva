@@ -7,22 +7,23 @@
 
   &__editor {
     @extend %base-container;
+    @include navbar-padding-bottom($increment * 2);
     @include navbar-padding-top($increment * 2);
     background-color: $light-color;
     min-height: 100%;
-    padding-bottom: ($increment * 2);
   }
 }
 
 @media (max-width: $screen-small) {
   .notes__editor {
+    @include navbar-padding-bottom($grid-gutter);
     @include navbar-padding-top($grid-gutter);
   }
 }
 
 .note {
   margin: auto;
-  max-width: $screen-medium;
+  max-width: $screen-small;
   min-height: 15rem;
   width: 100%;
 
