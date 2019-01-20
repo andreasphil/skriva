@@ -53,19 +53,15 @@
 // Media queries
 @media (max-width: $screen-small) {
   .home {
-    &__left,
-    &__right {
-      @include make-grid-col(12);
-    }
-  }
-}
-
-@media (max-width: $screen-small) {
-  .home {
     margin: 0 (-$grid-gutter);
 
     &__wrapper {
       padding-top: 0;
+    }
+
+    &__left,
+    &__right {
+      @include make-grid-col(12);
     }
   }
 }
