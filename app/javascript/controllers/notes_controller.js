@@ -39,6 +39,7 @@ export default class extends Controller {
       autoLink: true,
       anchorPreview: false
     })
+    this.noteTarget.focus()
   }
 
   connect () {
