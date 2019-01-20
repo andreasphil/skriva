@@ -34,8 +34,11 @@
     }
 
     &--error {
-      @include control-shadow($error-color-light);
-      border-color: $error-color;
+      &,
+      &:focus {
+        @include control-shadow($error-color-light);
+        border-color: $error-color;
+      }
     }
 
     &--success {
