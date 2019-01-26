@@ -61,6 +61,7 @@ en:
   users:
     new:
       cancel: Cancel
+      sign_up_disabled: Thanks for your interest in Skriva. Unfortunately, registration is not yet open for the public.
       title: Hello!
     edit:
       cancel: Back

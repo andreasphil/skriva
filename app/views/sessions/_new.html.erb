@@ -4,11 +4,9 @@
 
 <% content_for :navigation do %>
   <nav class="navbar navbar--inline">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t('shared.navbar.sign_up'),
-        sign_up_path,
-        class: 'navbar__link' %>
-    <% end %>
+    <%= link_to t('shared.navbar.sign_up'),
+      sign_up_path,
+      class: 'navbar__link' %>
     <%= link_to t('shared.navbar.sign_in'),
       sign_in_path,
       class: ['navbar__link', 'active'] %>

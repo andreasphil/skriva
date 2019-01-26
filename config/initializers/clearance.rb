@@ -7,4 +7,6 @@ Clearance.configure do |config|
 
   config.redirect_url = '/note/edit'
   config.rotate_csrf_on_sign_in = true
+
+  config.allow_sign_up = false unless ENV['CLEARANCE_ALLOW_SIGN_UP'].present?
 end
