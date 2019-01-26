@@ -5,8 +5,6 @@
     <div class="note"
       data-stimulus-action="input->notes#onChanged"
       data-stimulus-target="notes.note">
-
-      <%# TODO: Use HTML sanitizer instead for security reasons %>
       <%= @note.text.html_safe %>
     </div>
 

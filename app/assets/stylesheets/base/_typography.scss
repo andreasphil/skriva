@@ -16,7 +16,6 @@ $h-sizes: (
   %h#{$i} {
     font-size: map-get($h-sizes, $i);
     font-weight: 500;
-    text-transform: capitalize;
   }
 }
 

@@ -2,6 +2,6 @@
 
 # Application mailer
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com' # TODO: Fix address
+  default from: 'noreply@example.com'
   layout 'mailer'
 end
