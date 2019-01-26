@@ -61,12 +61,12 @@ export default class extends Controller {
 
   onSend (e) {
     this.isSaving = true
+    this.isDirty = false
     this.updateStatusLabel(this.saveStatues.saving)
   }
 
   onSuccess (e) {
     this.isSaving = false
-    this.isDirty = false
     this.updateStatusLabel(this.saveStatues.saved)
   }
 
