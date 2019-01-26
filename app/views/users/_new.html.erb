@@ -4,23 +4,29 @@
 
 <% content_for :navigation do %>
   <nav class="navbar navbar--inline">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t('shared.navbar.sign_up'),
-        sign_up_path,
-        class: ['navbar__link', 'active'] %>
-    <% end %>
-      <%= link_to t('shared.navbar.sign_in'),
-        sign_in_path,
-        class: 'navbar__link' %>
+    <%= link_to t('shared.navbar.sign_up'),
+      sign_up_path,
+      class: ['navbar__link', 'active'] %>
+    <%= link_to t('shared.navbar.sign_in'),
+      sign_in_path,
+      class: 'navbar__link' %>
   </nav>
 <% end %>
 
 <% content_for :body do %>
-  <%= form_for @user do |form| %>
-    <%= render partial: 'users/form', object: form %>
+  <% if Clearance.configuration.allow_sign_up? %>
+    <%= form_for @user do |form| %>
+      <%= render partial: 'users/form', object: form %>
 
-    <div class="form__submit">
-      <%= form.submit class: ['button', 'button--primary'] %>
+      <div class="form__submit">
+        <%= form.submit class: ['button', 'button--primary'] %>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="notification__wrapper">
+      <div class="notification notification--notice">
+        <%= t('.sign_up_disabled') %>
+      </div>
     </div>
   <% end %>
 <% end %>

@@ -61,6 +61,7 @@ de:
   users:
     new:
       cancel: Abbrechen
+      sign_up_disabled: Danke für dein Interesse an Skriva! Leider ist zur Zeit noch keine Registrierung möglich.
       title: Hallo!
     edit:
       cancel: Zurück

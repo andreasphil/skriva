@@ -15,11 +15,9 @@
         sign_out_path,
         method: :delete, class: 'navbar__link' %>
     <% else %>
-      <% if Clearance.configuration.allow_sign_up? %>
-        <%= navbar_link_to t('shared.navbar.sign_up'),
-          sign_up_path,
-          class: 'navbar__link' %>
-      <% end %>
+      <%= navbar_link_to t('shared.navbar.sign_up'),
+        sign_up_path,
+        class: 'navbar__link' %>
       <%= navbar_link_to t('shared.navbar.sign_in'),
         sign_in_path,
         class: 'navbar__link' %>

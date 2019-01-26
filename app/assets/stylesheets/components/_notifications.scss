@@ -6,7 +6,6 @@
   border: 0;
   border-radius: $border-radius;
   color: $light-color;
-  cursor: pointer;
   margin: $grid-gutter;
   margin-bottom: 0;
   padding: $baseline-small-x2 $baseline-small-x3;
@@ -40,5 +39,9 @@
   &--notice {
     @include box-shadow-bottom($warning-color);
     @include background-gradient($warning-color, $warning-color-light, $warning-color-dark);
+  }
+
+  &--interactive {
+    cursor: pointer;
   }
 }
