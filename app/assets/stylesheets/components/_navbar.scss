@@ -19,6 +19,7 @@ $navbar-vertical-padding: (($navbar-height - $navbar-line-height) / 2);
   @include position(fixed, 0, 0, auto);
   background-color: $light-color;
   display: flex;
+  overflow-y: scroll;
   z-index: 10;
 
   &--inline {
@@ -38,6 +39,7 @@ $navbar-vertical-padding: (($navbar-height - $navbar-line-height) / 2);
     flex: 1 1 0;
     padding-bottom: 0;
     padding-top: 0;
+    white-space: nowrap;
 
     &--right {
       text-align: right;
